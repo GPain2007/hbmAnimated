@@ -30,9 +30,15 @@ export const Links = () => {
   return (
     <motion.div className="links" variants={variants}>
       {items.map((item) => (
-        <a href={`http://`} key={item}>
+        <motion.a
+          href={`http://`}
+          key={item}
+          variants={itemVariants}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+        >
           {item}
-        </a>
+        </motion.a>
       ))}
     </motion.div>
   );

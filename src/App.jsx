@@ -1,4 +1,5 @@
 import "./app.scss";
+import Hero from "./components/hero/Hero";
 import { NavBar } from "./components/navbar/NavBar";
 
 const App = () => {
@@ -6,7 +7,7 @@ const App = () => {
     <div>
       <section>
         <NavBar />
-        <a href="">Hero</a>
+        <Hero />
       </section>
       <section>Parallax</section>
       <section>Footer</section>

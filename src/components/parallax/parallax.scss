@@ -1,0 +1,23 @@
+.parallax {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 100px;
+    position: absolute;
+    top: 5rem;
+  }
+
+  .flowers {
+    background-image: url("../carousel/images/backgroundNoBack.png");
+    background-size: cover;
+    background-position: bottom;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}

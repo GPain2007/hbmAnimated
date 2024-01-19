@@ -2,8 +2,6 @@ import image2 from "./images/IMG_7698.jpg";
 import image4 from "./images/IMG_7701.jpg";
 import image5 from "./images/IMG_2024.jpg";
 import image6 from "./images/IMG_7986.jpg";
-import image7 from "./images/IMG_9939.jpg";
-import image8 from "./images/IMG_9958.jpg";
 import image9 from "./images/IMG_2025.jpg";
 import image10 from "./images/StemsOfATX.jpg";
 import image11 from "./images/StemsOfATX-2.jpg";
@@ -30,16 +28,6 @@ export const ImageData = [
     id: 6,
     alt: "image_6",
     src: image6,
-  },
-  {
-    id: 7,
-    alt: "image_7",
-    src: image7,
-  },
-  {
-    id: 8,
-    alt: "image_8",
-    src: image8,
   },
   {
     id: 9,

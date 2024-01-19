@@ -1,5 +1,6 @@
 import "./hero.scss";
 import { motion } from "framer-motion";
+import Carousel from "../carousel/Carousel";
 
 const testVariants = {
   initial: {
@@ -39,6 +40,21 @@ const sliderVariants = {
   },
 };
 
+const carouselVariants = {
+  initial: {
+    x: +500,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
 const Hero = () => {
   return (
     <div className="hero">
@@ -49,8 +65,10 @@ const Hero = () => {
           initial="initial"
           animate="animate"
         >
-          <motion.h2 variants={testVariants}>HBM Flower City</motion.h2>
-          <motion.h1 variants={testVariants}>See the Lastest Works</motion.h1>
+          <motion.h1 variants={testVariants}>HBM Flower City</motion.h1>
+          <motion.h2 variants={testVariants}>
+            Using florals to bring joy, excitement and, love into the world!
+          </motion.h2>
           <motion.img
             src="/scroll.png"
             alt=""
@@ -68,7 +86,13 @@ const Hero = () => {
         Your Wedding and Event Florist
       </motion.div>
       <div className="imageContainer">
-        <img src="/animatedProfileBig.png" alt="" />
+        <motion.div
+          variants={carouselVariants}
+          initial="initial"
+          animate="animate"
+        >
+          <Carousel />
+        </motion.div>
       </div>
     </div>
   );

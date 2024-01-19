@@ -1,0 +1,76 @@
+.testimonial {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(180deg, #f9d8cc, #fff7f4);
+
+  .pageTitle {
+    position: absolute;
+    top: 5rem;
+    font-size: 3rem;
+  }
+}
+
+.quote {
+  position: absolute;
+  width: 1000px;
+  height: 375px;
+  top: 0;
+  right: 0;
+  left: 2rem;
+  bottom: 0;
+  margin: auto;
+  border-radius: 10px;
+  border: 10px solid white;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: 500ms;
+  font-size: 25px;
+
+  .quoteText {
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  .quoteAuthor {
+    padding-right: 35px;
+    justify-content: right;
+    align-items: right;
+    display: flex;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.quote--left {
+  transform: translateX(-65%) scale(0.2);
+  transition: 500ms;
+  opacity: 0.3;
+}
+
+.quote--right {
+  transform: translateX(63%) scale(0.2);
+  transition: 500ms;
+  opacity: 0.3;
+}
+
+.quote--active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 99;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 2s ease;
+}
+.slide.active {
+  opacity: 1;
+  transition-duration: 2s;
+  transform: scale(1.08);
+}

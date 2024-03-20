@@ -1,4 +1,4 @@
-import { Links } from "./links/Links";
+import Links from "./links/Links";
 import "./siderbar.scss";
 import { ToggleButton } from "./togglebutton/ToggleButton";
 import { motion } from "framer-motion";

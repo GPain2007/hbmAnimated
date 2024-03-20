@@ -1,24 +1,21 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./app.scss";
-import Hero from "./components/hero/Hero";
+import Contact from "./pages/contact/Contact";
 import { NavBar } from "./components/navbar/NavBar";
+import Home from "./pages/home/Home";
 
-import Testimonial from "./components/testimonial/Testimonial";
-
-const App = () => {
+function App() {
   return (
     <div>
-      <section>
+      <Router>
         <NavBar />
-        <Hero />
-      </section>
-      <section>
-        <Testimonial />
-      </section>
-      <section>Test</section>
-      <section>About</section>
-      <section>Footer</section>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/contact" element={<Contact />} />
+        </Routes>
+      </Router>
     </div>
   );
-};
+}
 
 export default App;

@@ -25,23 +25,33 @@ const itemVariants = {
   },
 };
 
-export const Links = () => {
-  const items = ["Home", "Contact"];
+const Links = () => {
   return (
     <motion.div className="links" variants={variants}>
-      {items.map((item) => (
-        <motion.a
-          href={`http://`}
-          key={item}
-          variants={itemVariants}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          {item}
-        </motion.a>
-      ))}
+      <motion.a
+        href="/"
+        variants={itemVariants}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        Home
+      </motion.a>
+      <motion.a
+        href="/contact"
+        variants={itemVariants}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        Contact
+      </motion.a>
+      <motion.a
+        href={`http://`}
+        variants={itemVariants}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+      ></motion.a>
     </motion.div>
   );
 };
 
-// export default Links;
+export default Links;

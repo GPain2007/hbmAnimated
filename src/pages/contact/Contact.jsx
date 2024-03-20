@@ -1,7 +1,14 @@
-import React from "react";
+import { NavBar } from "../../components/navbar/NavBar";
 
 const Contact = () => {
-  return <div>Contact</div>;
+  return (
+    <div>
+      <section>
+        <NavBar />
+        Contact
+      </section>
+    </div>
+  );
 };
 
 export default Contact;

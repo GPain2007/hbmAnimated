@@ -45,11 +45,13 @@ const Links = () => {
         Contact
       </motion.a>
       <motion.a
-        href={`http://`}
+        href="/offerings"
         variants={itemVariants}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-      ></motion.a>
+      >
+        Offerings
+      </motion.a>
     </motion.div>
   );
 };

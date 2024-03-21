@@ -1,0 +1,17 @@
+.contact_page {
+  padding: 20px;
+}
+
+.contact_button {
+  cursor: pointer;
+  background-color: #007bff; // Or any desired color
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 20px; // Adjust as needed
+}
+
+.contact_button:hover {
+  background-color: #0056b3; // Or any desired color on hover
+}

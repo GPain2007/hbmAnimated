@@ -4,8 +4,21 @@ import Contact from "./pages/contact/Contact";
 
 import Home from "./pages/home/Home";
 import Offerings from "./pages/offerings/Offerings";
+import React, { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    // Code to run when component mounts
+    removeLoomDiv();
+  }, []);
+
+  // Function to remove the loom div
+  const removeLoomDiv = () => {
+    const loomDiv = document.getElementById("loom-companion-mv3");
+    if (loomDiv) {
+      loomDiv.parentNode.removeChild(loomDiv);
+    }
+  };
   return (
     <div>
       <Router>

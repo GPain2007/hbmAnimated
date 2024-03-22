@@ -43,14 +43,18 @@
   overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
+  transition: opacity 0.3s ease;
 }
 
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto;
-  padding: 20px;
+  padding: 50px;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
+  position: relative;
+  transition: transform 0.3s ease; /* Smooth transition for transform */
+  transform: translateY(-100px);
 }
 
 .close {
@@ -67,7 +71,7 @@
   cursor: pointer;
 }
 
-contact_page {
+.contact_page {
   padding: 20px;
 }
 
@@ -83,4 +87,12 @@ contact_page {
 
 .contact_button:hover {
   background-color: #0056b3; // Or any desired color on hover
+}
+
+.full_service {
+  margin-left: 25px;
+}
+
+.cart {
+  margin-left: 25px;
 }

@@ -31,7 +31,7 @@ const sliderVariants = {
   },
 
   animate: {
-    x: "-220%",
+    x: "-720%",
     transition: {
       repeat: Infinity,
       repeatType: "mirror",
@@ -83,7 +83,7 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
-        Your Wedding and Event Florist
+        Bespoke Weddings Events & Arrangments
       </motion.div>
       <div className="imageContainer">
         <motion.div

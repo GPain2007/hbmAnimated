@@ -309,6 +309,10 @@ const ContactForm = ({ onHide, ...props }) => {
                             />{" "}
                             Full Service
                           </label>
+                          <div className="full_service">
+                            This is Full Service
+                          </div>
+
                           <label>
                             <Field
                               type="radio"
@@ -318,6 +322,7 @@ const ContactForm = ({ onHide, ...props }) => {
                             A La Cart (just purchasing a bouquet, altar
                             arrangements, etc)
                           </label>
+                          <div className="cart">this is for A La Cart</div>
                         </div>
                       )}
                     </Field>
@@ -367,17 +372,19 @@ const ContactForm = ({ onHide, ...props }) => {
                   className="invalid-feedback"
                 />
               </div>
-              <Button
-                type="submit"
-                variant="primary"
-                disabled={isSubmitting}
-                className="mb-5"
-              >
-                Send
-              </Button>
-              <button type="button" onClick={onHide}>
-                Hide Form
-              </button>
+              <div>
+                <button
+                  type="submit"
+                  variant="primary"
+                  disabled={isSubmitting}
+                  className="submit-btn"
+                >
+                  Send
+                </button>
+                <button type="button" onClick={onHide}>
+                  Close
+                </button>
+              </div>
             </Form>
           )}
         </Formik>

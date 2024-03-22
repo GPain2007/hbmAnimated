@@ -1,4 +1,5 @@
 import { NavBar } from "../../components/navbar/NavBar";
+import React, { useEffect } from "react";
 
 const Offerings = () => {
   return (

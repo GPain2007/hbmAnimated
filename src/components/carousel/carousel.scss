@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .carousel {
   position: relative;
   height: 100vh;
@@ -11,8 +13,8 @@
 
 .image {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   top: 0;
   right: 0;
   left: 0;
@@ -22,6 +24,11 @@
   object-fit: cover;
   opacity: 0;
   transition: 500ms;
+
+  @include mobile {
+    width: 200px;
+    height: 200px;
+  }
 }
 .image--left {
   transform: translateX(-80%) scale(0.2);

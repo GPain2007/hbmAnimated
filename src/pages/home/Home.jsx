@@ -13,10 +13,10 @@ const Home = () => {
       <section>
         <Testimonial />
       </section>
-      <section>
+      {/* <section>
         <Services />
       </section>
-      <section>Footer</section>
+      <section>Footer</section> */}
     </div>
   );
 };

@@ -230,7 +230,7 @@ const ContactForm = ({ onHide, ...props }) => {
                   className="invalid-feedback"
                 />
               </div>
-              <br />
+
               <div className="florals_for">
                 <label className="form-label">Florals for:</label>
                 <div role="group" aria-labelledby="reason-group">
@@ -670,9 +670,6 @@ const ContactForm = ({ onHide, ...props }) => {
                   onClick={() => console.log("Button clicked")}
                 >
                   Send
-                </button>
-                <button type="button" onClick={onHide}>
-                  Close
                 </button>
               </div>
             </Form>

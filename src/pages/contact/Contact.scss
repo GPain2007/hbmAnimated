@@ -2,16 +2,45 @@
   padding: 20px;
 }
 
+.paragraph_1 {
+  padding: 20px;
+  h1 {
+    font-size: 34px;
+  }
+}
+
+.paragraph_2 {
+  padding: 10px;
+  h1 {
+    font-size: 24px;
+  }
+}
+
+.paragraph_3 {
+  padding: 20px;
+  h1 {
+    font-size: 34px;
+  }
+}
+
 .contact_button {
   cursor: pointer;
-  background-color: #007bff; // Or any desired color
-  color: white;
+  height: 100px;
+  width: 400px;
+  background-color: #f9d8cc; // Or any desired color
+  color: goldenrod;
   padding: 10px 20px;
-  border-radius: 5px;
-  display: inline-block;
+  border-radius: 25px;
+  font-size: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   margin-top: 20px; // Adjust as needed
+  transition: all 0.5s ease-out;
 }
 
 .contact_button:hover {
-  background-color: #0056b3; // Or any desired color on hover
+  background-color: goldenrod; // Or any desired color on hover
+  color: #f9d8cc;
 }

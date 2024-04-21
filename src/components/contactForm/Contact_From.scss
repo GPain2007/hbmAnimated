@@ -43,7 +43,7 @@
   overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
-  transition: opacity 0.3s ease;
+  transition: opacity 2s ease;
 }
 
 .modal-content {
@@ -53,7 +53,7 @@
   border: 1px solid #888;
   width: 50%;
   position: relative;
-  transition: transform 0.3s ease; /* Smooth transition for transform */
+  transition: transform 2s ease; /* Smooth transition for transform */
   transform: translateY(-100px);
 }
 
@@ -75,18 +75,18 @@
   padding: 20px;
 }
 
-.contact_button {
+.contactForm_button {
   cursor: pointer;
-  background-color: #007bff; // Or any desired color
-  color: white;
+  background-color: #f9d8cc;
+  color: goldenrod;
   padding: 10px 20px;
   border-radius: 5px;
   display: inline-block;
-  margin-top: 20px; // Adjust as needed
+  margin-top: 20px;
 }
 
-.contact_button:hover {
-  background-color: #0056b3; // Or any desired color on hover
+.contactForm_button:hover {
+  background-color: #f9d8cc;
 }
 
 .full_service {
@@ -95,4 +95,173 @@
 
 .cart {
   margin-left: 25px;
+}
+
+.contact_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.name {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  font-size: 25px;
+  .form-label {
+    padding-bottom: 10px;
+  }
+  .form-control {
+    height: 30px;
+    width: 360px;
+  }
+  .invaild-feedback {
+    padding: 0px 10px;
+  }
+}
+
+.email {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  font-size: 25px;
+  .form-label {
+    padding-bottom: 10px;
+  }
+  .form-control {
+    height: 30px;
+    width: 360px;
+  }
+  .invaild-feedback {
+    padding: 0px 10px;
+  }
+}
+
+.florals_for {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  font-size: 25px;
+  .options {
+    padding: 10px;
+    .select {
+      padding: 10px;
+    }
+    .form-label {
+      padding-bottom: 10px;
+    }
+    .form-control {
+      height: 30px;
+      width: 360px;
+    }
+    .invaild-feedback {
+      padding: 10px 10px;
+    }
+  }
+
+  .couples {
+    padding: 10px;
+    .input {
+      height: 30px;
+      width: 360px;
+    }
+  }
+
+  .phone {
+    padding: 10px;
+    .form-label {
+      padding-bottom: 10px;
+      padding-right: 10px;
+    }
+    .form-control {
+      height: 30px;
+      width: 360px;
+    }
+    .invaild-feedback {
+      padding: 10px 10px;
+    }
+  }
+
+  .event_date {
+    padding: 10px;
+    .form-label {
+      padding-bottom: 10px;
+      padding-right: 10px;
+    }
+    .form-control {
+      height: 30px;
+      width: 120px;
+    }
+    .invaild-feedback {
+      padding: 10px 10px;
+    }
+  }
+
+  .venue {
+    padding: 10px;
+    .form-label {
+      padding-bottom: 10px;
+      padding-right: 10px;
+    }
+    .form-control {
+      height: 30px;
+      width: 360px;
+    }
+    .invaild-feedback {
+      padding: 10px 10px;
+    }
+  }
+
+  .budget {
+    padding: 10px;
+    .form-label {
+      padding-bottom: 10px;
+      padding-right: 10px;
+    }
+    .form-control {
+      height: 30px;
+      width: 322px;
+    }
+    .invaild-feedback {
+      padding: 10px 10px;
+    }
+  }
+  .guest_count {
+    padding: 10px;
+    .form-label {
+      padding-bottom: 10px;
+      padding-right: 10px;
+    }
+    .form-control {
+      height: 30px;
+      width: 365px;
+    }
+  }
+
+  .number_party {
+    padding: 10px;
+    .form-label {
+      padding-bottom: 10px;
+      padding-right: 10px;
+    }
+    .form-control {
+      height: 30px;
+      width: 190px;
+    }
+  }
+
+  .message {
+    padding: 10px;
+    .form-label {
+      padding-bottom: 10px;
+      padding-right: 10px;
+    }
+    .form-control {
+      height: 0px;
+      width: 190px;
+    }
+    .invaild-feedback {
+      padding: 10px 10px;
+    }
+  }
 }

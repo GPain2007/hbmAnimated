@@ -194,7 +194,7 @@ const ContactForm = ({ onHide, ...props }) => {
         >
           {({ isSubmitting, touched, errors }) => (
             <Form>
-              <div className="mb-3">
+              <div className="name">
                 <label htmlFor="name" className="form-label">
                   Name
                 </label>
@@ -212,8 +212,8 @@ const ContactForm = ({ onHide, ...props }) => {
                   className="invalid-feedback"
                 />
               </div>
-              <br />
-              <div className="mb-3">
+
+              <div className="email">
                 <label htmlFor="email" className="form-label">
                   Email
                 </label>
@@ -231,7 +231,7 @@ const ContactForm = ({ onHide, ...props }) => {
                 />
               </div>
               <br />
-              <div className="mb-3">
+              <div className="florals_for">
                 <label className="form-label">Florals for:</label>
                 <div role="group" aria-labelledby="reason-group">
                   <div>
@@ -249,50 +249,55 @@ const ContactForm = ({ onHide, ...props }) => {
                               field.value === "Wedding" ? "block" : "none",
                           }}
                         >
-                          <div>
-                            <label htmlFor="whose-iam-select">
+                          <div className="options">
+                            <label
+                              htmlFor="whose-iam-select"
+                              className="select"
+                            >
                               I am...
-                              <Field name="whoIAm">
-                                {({ field }) => (
-                                  <select {...field}>
-                                    <option value="">
-                                      --Please choose an option--
-                                    </option>
-                                    <option value="Bride">Bride</option>
-                                    <option value="Groom">Groom</option>
-                                    <option value="Planner">Planner</option>
-                                    <option value="Host">Host</option>
-                                    <option value="Other">Other</option>
-                                  </select>
-                                )}
-                              </Field>
                             </label>
+                            <Field name="whoIAm">
+                              {({ field }) => (
+                                <select {...field} className="select">
+                                  <option value="">
+                                    --Please choose an option--
+                                  </option>
+                                  <option value="Bride">Bride</option>
+                                  <option value="Groom">Groom</option>
+                                  <option value="Planner">Planner</option>
+                                  <option value="Host">Host</option>
+                                  <option value="Other">Other</option>
+                                </select>
+                              )}
+                            </Field>
                           </div>
-                          <br />
-                          <div>
+
+                          <div className="couples">
                             <label htmlFor="couples">
                               The Couples Names: ( please include first and last
                               name of each)
-                              <br />
-                              <div>
-                                <Field
-                                  component="input"
-                                  type="text"
-                                  name="couple_name1"
-                                />
-                              </div>
-                              <br />
-                              <div>
-                                <Field
-                                  component="input"
-                                  type="text"
-                                  name="couple_name2"
-                                />
-                              </div>
                             </label>
+                            <div>
+                              <label className="name"> 1)</label>
+                              <Field
+                                component="input"
+                                type="text"
+                                name="couple_name1"
+                                className="input"
+                              />
+                            </div>
+                            <div>
+                              <label className="name"> 2)</label>
+                              <Field
+                                component="input"
+                                type="text"
+                                name="couple_name2"
+                                className="input"
+                              />
+                            </div>
                           </div>
-                          <br />
-                          <div className="mb-3">
+
+                          <div className="phone">
                             <label htmlFor="phone" className="form-label">
                               Phone:
                             </label>
@@ -309,8 +314,8 @@ const ContactForm = ({ onHide, ...props }) => {
                               className="invalid-feedback"
                             />
                           </div>
-                          <br />
-                          <div className="mb-3">
+
+                          <div className="event_date">
                             <label htmlFor="date" className="form-label">
                               Event Date:
                             </label>
@@ -328,8 +333,8 @@ const ContactForm = ({ onHide, ...props }) => {
                               className="invalid-feedback"
                             />
                           </div>
-                          <br />
-                          <div className="mb-3">
+
+                          <div className="venue">
                             <label htmlFor="venue" className="form-label">
                               Venue Name:
                             </label>
@@ -346,8 +351,8 @@ const ContactForm = ({ onHide, ...props }) => {
                               className="invalid-feedback"
                             />
                           </div>
-                          <br />
-                          <div className="mb-3">
+
+                          <div className="budget">
                             <label htmlFor="budget" className="form-label">
                               My Floral Budget:
                             </label>
@@ -364,20 +369,31 @@ const ContactForm = ({ onHide, ...props }) => {
                               className="invalid-feedback"
                             />
                           </div>
-                          <br />
-                          <div>
-                            <label htmlFor="guest_count">Guest Count:</label>
-                            <Field type="number" name="guest_count" />
+
+                          <div className="guest_count">
+                            <label className="form-label">Guest Count:</label>
+                            <Field
+                              type="number"
+                              name="guest_count"
+                              className="form-control"
+                            />
                           </div>
-                          <br />
-                          <div>
-                            <label htmlFor="number_party">
+
+                          <div className="number_party">
+                            <label
+                              htmlFor="number_party"
+                              className="form-label"
+                            >
                               Number in Your Wedding Party:
                             </label>
-                            <Field type="number" name="number_party" />
+                            <Field
+                              type="number"
+                              name="number_party"
+                              className="form-control"
+                            />
                           </div>
-                          <br />
-                          <div className="mb-3">
+
+                          <div className="message">
                             <label htmlFor="message" className="form-label">
                               Please describe your overall vision for your
                               wedding flowers. Include details like style,
@@ -401,7 +417,7 @@ const ContactForm = ({ onHide, ...props }) => {
                               className="invalid-feedback"
                             />
                           </div>
-                          <br />
+
                           <div className="mb-3">
                             <label
                               htmlFor="floral_design_needs"
@@ -427,7 +443,7 @@ const ContactForm = ({ onHide, ...props }) => {
                               className="invalid-feedback"
                             />
                           </div>
-                          <br />
+
                           <div>
                             <label htmlFor="candles">
                               Will you need candles for your wedding &
@@ -659,7 +675,7 @@ const ContactForm = ({ onHide, ...props }) => {
                   Send
                 </button>
                 <button type="button" onClick={onHide}>
-                  Hide Form
+                  Close
                 </button>
               </div>
             </Form>

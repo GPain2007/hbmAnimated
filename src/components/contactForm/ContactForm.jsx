@@ -401,7 +401,7 @@ const ContactForm = ({ onHide, ...props }) => {
                               a natural, romantic look with blush blooms and
                               lots of greenery…”
                             </label>
-                            <br />
+
                             <Field
                               name="message"
                               as="textarea"
@@ -418,7 +418,7 @@ const ContactForm = ({ onHide, ...props }) => {
                             />
                           </div>
 
-                          <div className="mb-3">
+                          <div className="message">
                             <label
                               htmlFor="floral_design_needs"
                               className="form-label"
@@ -468,7 +468,7 @@ const ContactForm = ({ onHide, ...props }) => {
                                               : "none",
                                         }}
                                       >
-                                        <div>
+                                        <div className="message">
                                           <label htmlFor="kind-of-candles">
                                             If so, what would you like?
                                             <br />
@@ -506,9 +506,9 @@ const ContactForm = ({ onHide, ...props }) => {
                               </div>
                             </label>
                           </div>
-                          <br />
-                          <div>
-                            <label>
+
+                          <div className="message">
+                            <label className="form-label">
                               Please list your floral wishes (extra items that
                               you would like to have): EX: “I would love flowers
                               down the aisle if the budget allows, etc…”
@@ -529,27 +529,27 @@ const ContactForm = ({ onHide, ...props }) => {
                               />
                             </label>
                           </div>
-                          <br />
-                          <div>
-                            <label>
+
+                          <div className="url">
+                            <label className="form-label">
                               If you ideas or a vision for your wedding please
                               share a copy of your pinterest board below:
-                              <Field
-                                component="input"
-                                type="url"
-                                name="pinterest"
-                                placeholder="https://example.com"
-                              />
-                              <br />
                             </label>
+
+                            <Field
+                              component="input"
+                              type="url"
+                              name="pinterest"
+                              placeholder="https://example.com"
+                              className="form-control"
+                            />
                           </div>
-                          <br />
-                          <div>
-                            <label>
+
+                          <div className="message">
+                            <label className="form-label">
                               Please Share some of your other vendors: (For
                               example your photographer, planner, videographer,
                               etc!)
-                              <br />
                               <Field
                                 name="vendors"
                                 as="textarea"
@@ -566,12 +566,11 @@ const ContactForm = ({ onHide, ...props }) => {
                               />
                             </label>
                           </div>
-                          <br />
-                          <div>
-                            <label>
+
+                          <div className="message">
+                            <label className="form-label">
                               Any other information you would like to share with
                               us?
-                              <br />
                               <Field
                                 name="information"
                                 as="textarea"
@@ -588,11 +587,10 @@ const ContactForm = ({ onHide, ...props }) => {
                               />
                             </label>
                           </div>
-                          <br />
-                          <div>
-                            <label>
+
+                          <div className="message">
+                            <label className="form-label">
                               How did you hear about us?
-                              <br />
                               <Field
                                 name="about_us"
                                 as="textarea"
@@ -609,7 +607,6 @@ const ContactForm = ({ onHide, ...props }) => {
                               />
                             </label>
                           </div>
-                          <br />
                         </div>
                       )}
                     </Field>

@@ -250,15 +250,27 @@
     }
   }
 
-  .message {
+  .url {
     padding: 10px;
     .form-label {
       padding-bottom: 10px;
       padding-right: 10px;
     }
     .form-control {
-      height: 0px;
-      width: 190px;
+      height: 30px;
+      width: 360px;
+    }
+  }
+
+  .message {
+    padding: 10px;
+    .form-label {
+      padding-bottom: 10px;
+    }
+    .form-control {
+      height: 250px;
+      width: 500px;
+      padding: 10px;
     }
     .invaild-feedback {
       padding: 10px 10px;

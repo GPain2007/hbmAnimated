@@ -12,28 +12,29 @@ const validationSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email is required"),
   message: Yup.string()
     .min(10, "Message must be at least 10 characters")
-    .max(500, "Message must be less than 500 characters")
-    .required("Message is required"),
-  reason: Yup.string().required("Reason is required"),
-  state: Yup.string()
-    .min(2, "Name must be at least 2 characters long")
-    .max(50, "Name must be less than 50 characters long")
-    .required("State is required"),
-  city: Yup.string()
-    .min(3, "Name must be at least 3 characters")
-    .max(50, "Name must be less than 50 characters")
-    .required("City required"),
-  zipcode: Yup.string()
-    .min(5, "Must have a vaild Zip Code")
-    .max(12, "No more than 12 characters")
-    .required("Must enter a Zip code"),
-  date: Yup.date().required("Date is required"),
-  budget: Yup.number().positive("Budget must be a positive number"),
+    .max(500, "Message must be less than 500 characters"),
+  reason: Yup.string(),
+  date: Yup.date(),
+  budget: Yup.number().min(
+    3500,
+    "Please note, we require a minimum floral investment of 3,500 for all full service weddings."
+  ),
   venue: Yup.string()
     .min(3, "Name must be at least 3 characters")
-    .max(50, "Name must be less than 50 characters")
-    .required("Name is required"),
-  phone: Yup.number().required("Phone number is required"),
+    .max(50, "Name must be less than 50 characters"),
+  phone: Yup.number(),
+  guest_count: Yup.number(),
+  number_party: Yup.number(),
+  floral_design_needs: Yup.string()
+    .min(10, "Message must be at least 10 characters")
+    .max(500, "Message must be less than 500 characters"),
+  floral_wishes: Yup.string()
+    .min(10, "Message must be at least 10 characters")
+    .max(500, "Message must be less than 500 characters"),
+  candles: Yup.string(),
+  candle_message: Yup.string()
+    .min(10, "Message must be at least 10 characters")
+    .max(500, "Message must be less than 500 characters"),
 });
 
 const initialValues = {
@@ -41,46 +42,118 @@ const initialValues = {
   email: "",
   message: "",
   reason: "",
-  city: "",
-  state: "",
-  zipcode: "",
   date: "",
   budget: "",
   venue: "",
   phone: "",
+  whoIAm: "",
+  couple_name1: "",
+  couple_name2: "",
+  guest_count: "",
+  number_party: "",
+  floral_design_needs: "",
+  floral_wishes: "",
+  candles: "",
+  candle_message: "",
+  pinterest: "",
+  vendors: "",
+  information: "",
 };
 
 const sendEmail = (values, actions) => {
-  const {
-    name,
-    email,
-    message,
-    reason,
-    city,
-    state,
-    zipcode,
-    date,
-    budget,
-    venue,
-    phone,
-  } = values;
+  const selectedData = {};
+  const { name, email, reason, ...otherValues } = values;
+  selectedData.from_name = name;
+  selectedData.from_email = email;
+  selectedData.reason = reason;
+
+  if (otherValues.number_party && !isNaN(otherValues.number_party)) {
+    selectedData.number_party = otherValues.number_party;
+  }
+
+  if (otherValues.guest_count && !isNaN(otherValues.guest_count)) {
+    selectedData.guest_count = otherValues.guest_count;
+  }
+
+  if (otherValues.couple_name1 && otherValues.couple_name1.trim() !== "") {
+    selectedData.couple_name1 = otherValues.couple_name1;
+  }
+  if (otherValues.couple_name2 && otherValues.couple_name2.trim() !== "") {
+    selectedData.couple_name2 = otherValues.couple_name2;
+  }
+
+  if (otherValues.whoIAm && otherValues.whoIAm.trim() !== "") {
+    selectedData.whoIAm = otherValues.whoIAm;
+  }
+
+  if (otherValues.couple_names && otherValues.couple_names.trim() !== "") {
+    selectedData.couple_names = otherValues.couple_names;
+  }
+
+  if (otherValues.phone && otherValues.phone.trim() !== "") {
+    selectedData.from_phone = otherValues.phone;
+  }
+
+  if (otherValues.phone && otherValues.phone.trim() !== "") {
+    selectedData.from_phone = otherValues.phone;
+  }
+
+  if (otherValues.date && otherValues.date.trim() !== "") {
+    selectedData.from_date = otherValues.date;
+  }
+
+  if (otherValues.budget && !isNaN(otherValues.budget)) {
+    selectedData.from_budget = otherValues.budget;
+  }
+
+  if (otherValues.venue && otherValues.venue.trim() !== "") {
+    selectedData.from_venue = otherValues.venue;
+  }
+
+  if (otherValues.message && otherValues.message.trim() !== "") {
+    selectedData.message = otherValues.message;
+  }
+
+  if (
+    otherValues.floral_design_needs &&
+    otherValues.floral_design_needs.trim() !== ""
+  ) {
+    selectedData.floral_design_needs = otherValues.floral_design_needs;
+  }
+
+  if (otherValues.floral_wishes && otherValues.floral_wishes.trim() !== "") {
+    selectedData.floral_wishes = otherValues.floral_wishes;
+  }
+
+  if (otherValues.candle_message) {
+    selectedData.candle_message = otherValues.candle_message;
+  }
+
+  if (otherValues.candles) {
+    selectedData.candles = otherValues.candles;
+  }
+
+  if (otherValues.pinterest) {
+    selectedData.pinterest = otherValues.pinterest;
+  }
+
+  if (otherValues.vendors && otherValues.vendors.trim() !== "") {
+    selectedData.vendors = otherValues.vendors;
+  }
+
+  if (otherValues.information && otherValues.information.trim() !== "") {
+    selectedData.information = otherValues.information;
+  }
+
+  if (otherValues.about_us && otherValues.about_us.trim() !== "") {
+    selectedData.about_us = otherValues.about_us;
+  }
+
   emailjs
     .send(
       "service_cfl2l94",
       "template_hlvwoss",
-      {
-        from_name: name,
-        from_email: email,
-        message,
-        reason,
-        from_city: city,
-        from_state: state,
-        from_zipcode: zipcode,
-        from_date: date,
-        from_budget: budget,
-        from_venue: venue,
-        from_phone: phone,
-      },
+      selectedData,
       "4G1ZboWGj8Eab1SFK"
     )
     .then(
@@ -94,7 +167,7 @@ const sendEmail = (values, actions) => {
         alert("Failed to send message. Please try again later.");
       }
     );
-  console.log(send);
+  console.log(selectedData);
 };
 
 const ContactForm = ({ onHide, ...props }) => {
@@ -110,14 +183,8 @@ const ContactForm = ({ onHide, ...props }) => {
         <h1 className="text-center">
           <strong>Wedding and Floral Inquiry</strong>
         </h1>
-        <p>
-          Please fill out the following inquiry form, providing as many details
-          as you can. If you need to get into contact with us directly for other
-          matters, please email us at{" "}
-          <a href="mailto:hbmflowercity@gmail.com">hbmflowercity@gmail.com</a>.
-          Once your inquiry is received, please allow 5-7 business days for us
-          to get in touch. Thank you so much for your consideration.
-        </p>
+        <br />
+
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -145,6 +212,7 @@ const ContactForm = ({ onHide, ...props }) => {
                   className="invalid-feedback"
                 />
               </div>
+              <br />
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">
                   Email
@@ -162,127 +230,7 @@ const ContactForm = ({ onHide, ...props }) => {
                   className="invalid-feedback"
                 />
               </div>
-              <div className="mb-3">
-                <label htmlFor="city" className="form-label">
-                  City
-                </label>
-                <Field
-                  type="text"
-                  name="city"
-                  className={`form-control ${
-                    touched.name && errors.name ? "is-invalid" : ""
-                  }`}
-                />
-                <ErrorMessage
-                  name="city"
-                  component="div"
-                  className="invalid-feedback"
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="state" className="form-label">
-                  State
-                </label>
-                <Field
-                  type="text"
-                  name="state"
-                  className={`form-control ${
-                    touched.name && errors.name ? "is-invalid" : ""
-                  }`}
-                />
-                <ErrorMessage
-                  name="state"
-                  component="div"
-                  className="invalid-feedback"
-                />
-              </div>
-
-              <div className="mb-3">
-                <label htmlFor="zipcode" className="form-label">
-                  Zip Code:
-                </label>
-                <Field
-                  type="number"
-                  name="zipcode"
-                  className={`form-control ${
-                    touched.name && errors.name ? "is-invalid" : ""
-                  }`}
-                />
-                <ErrorMessage
-                  name="zipcode"
-                  component="div"
-                  className="invalid-feedback"
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="budget" className="form-label">
-                  Budget:
-                </label>
-                <Field
-                  type="number"
-                  name="budget"
-                  className={`form-control ${
-                    touched.name && errors.name ? "is-invalid" : ""
-                  }`}
-                />
-                <ErrorMessage
-                  name="budget"
-                  component="div"
-                  className="invalid-feedback"
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="date" className="form-label">
-                  Date of Event:
-                </label>
-                <Field
-                  type="date"
-                  name="date"
-                  format="MM-dd-yyyy"
-                  className={`form-control ${
-                    touched.name && errors.name ? "is-invalid" : ""
-                  }`}
-                />
-                <ErrorMessage
-                  name="date"
-                  component="div"
-                  className="invalid-feedback"
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="venue" className="form-label">
-                  Name of venue:
-                </label>
-                <Field
-                  type="text"
-                  name="venue"
-                  className={`form-control ${
-                    touched.name && errors.name ? "is-invalid" : ""
-                  }`}
-                />
-                <ErrorMessage
-                  name="venue"
-                  component="div"
-                  className="invalid-feedback"
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="phone" className="form-label">
-                  Phone:
-                </label>
-                <Field
-                  type="tel"
-                  name="phone"
-                  className={`form-control ${
-                    touched.name && errors.name ? "is-invalid" : ""
-                  }`}
-                />
-                <ErrorMessage
-                  name="phone"
-                  component="div"
-                  className="invalid-feedback"
-                />
-              </div>
+              <br />
               <div className="mb-3">
                 <label className="form-label">Florals for:</label>
                 <div role="group" aria-labelledby="reason-group">
@@ -301,35 +249,379 @@ const ContactForm = ({ onHide, ...props }) => {
                               field.value === "Wedding" ? "block" : "none",
                           }}
                         >
-                          <label>
-                            <Field
-                              type="radio"
-                              name="weddingType"
-                              value="FullService"
-                            />{" "}
-                            Full Service
-                          </label>
-                          <div className="full_service">
-                            This is Full Service
+                          <div>
+                            <label htmlFor="whose-iam-select">
+                              I am...
+                              <Field name="whoIAm">
+                                {({ field }) => (
+                                  <select {...field}>
+                                    <option value="">
+                                      --Please choose an option--
+                                    </option>
+                                    <option value="Bride">Bride</option>
+                                    <option value="Groom">Groom</option>
+                                    <option value="Planner">Planner</option>
+                                    <option value="Host">Host</option>
+                                    <option value="Other">Other</option>
+                                  </select>
+                                )}
+                              </Field>
+                            </label>
                           </div>
-
-                          <label>
+                          <br />
+                          <div>
+                            <label htmlFor="couples">
+                              The Couples Names: ( please include first and last
+                              name of each)
+                              <br />
+                              <div>
+                                <Field
+                                  component="input"
+                                  type="text"
+                                  name="couple_name1"
+                                />
+                              </div>
+                              <br />
+                              <div>
+                                <Field
+                                  component="input"
+                                  type="text"
+                                  name="couple_name2"
+                                />
+                              </div>
+                            </label>
+                          </div>
+                          <br />
+                          <div className="mb-3">
+                            <label htmlFor="phone" className="form-label">
+                              Phone:
+                            </label>
                             <Field
-                              type="radio"
-                              name="weddingType"
-                              value="ALaCart"
-                            />{" "}
-                            A La Cart (just purchasing a bouquet, altar
-                            arrangements, etc)
-                          </label>
-                          <div className="cart">this is for A La Cart</div>
+                              type="tel"
+                              name="phone"
+                              className={`form-control ${
+                                touched.name && errors.name ? "is-invalid" : ""
+                              }`}
+                            />
+                            <ErrorMessage
+                              name="phone"
+                              component="div"
+                              className="invalid-feedback"
+                            />
+                          </div>
+                          <br />
+                          <div className="mb-3">
+                            <label htmlFor="date" className="form-label">
+                              Event Date:
+                            </label>
+                            <Field
+                              type="date"
+                              name="date"
+                              format="MM-dd-yyyy"
+                              className={`form-control ${
+                                touched.name && errors.name ? "is-invalid" : ""
+                              }`}
+                            />
+                            <ErrorMessage
+                              name="date"
+                              component="div"
+                              className="invalid-feedback"
+                            />
+                          </div>
+                          <br />
+                          <div className="mb-3">
+                            <label htmlFor="venue" className="form-label">
+                              Venue Name:
+                            </label>
+                            <Field
+                              type="text"
+                              name="venue"
+                              className={`form-control ${
+                                touched.name && errors.name ? "is-invalid" : ""
+                              }`}
+                            />
+                            <ErrorMessage
+                              name="venue"
+                              component="div"
+                              className="invalid-feedback"
+                            />
+                          </div>
+                          <br />
+                          <div className="mb-3">
+                            <label htmlFor="budget" className="form-label">
+                              My Floral Budget:
+                            </label>
+                            <Field
+                              type="number"
+                              name="budget"
+                              className={`form-control ${
+                                touched.name && errors.name ? "is-invalid" : ""
+                              }`}
+                            />
+                            <ErrorMessage
+                              name="budget"
+                              component="div"
+                              className="invalid-feedback"
+                            />
+                          </div>
+                          <br />
+                          <div>
+                            <label htmlFor="guest_count">Guest Count:</label>
+                            <Field type="number" name="guest_count" />
+                          </div>
+                          <br />
+                          <div>
+                            <label htmlFor="number_party">
+                              Number in Your Wedding Party:
+                            </label>
+                            <Field type="number" name="number_party" />
+                          </div>
+                          <br />
+                          <div className="mb-3">
+                            <label htmlFor="message" className="form-label">
+                              Please describe your overall vision for your
+                              wedding flowers. Include details like style,
+                              theme, and color palette. Ex: “We are envisioning
+                              a natural, romantic look with blush blooms and
+                              lots of greenery…”
+                            </label>
+                            <br />
+                            <Field
+                              name="message"
+                              as="textarea"
+                              className={`form-control ${
+                                touched.message && errors.message
+                                  ? "is-invalid"
+                                  : ""
+                              }`}
+                            />
+                            <ErrorMessage
+                              name="message"
+                              component="div"
+                              className="invalid-feedback"
+                            />
+                          </div>
+                          <br />
+                          <div className="mb-3">
+                            <label
+                              htmlFor="floral_design_needs"
+                              className="form-label"
+                            >
+                              Please list your floral design needs (items that
+                              you definitely must have): EX: “Bouquets for
+                              myself and 5 bridesmaids, etc…”
+                            </label>
+                            <br />
+                            <Field
+                              name="floral_design_needs"
+                              as="textarea"
+                              className={`form-control ${
+                                touched.message && errors.message
+                                  ? "is-invalid"
+                                  : ""
+                              }`}
+                            />
+                            <ErrorMessage
+                              name="message"
+                              component="div"
+                              className="invalid-feedback"
+                            />
+                          </div>
+                          <br />
+                          <div>
+                            <label htmlFor="candles">
+                              Will you need candles for your wedding &
+                              reception?
+                              <div role="group" aria-labelledby="reason-group">
+                                <div>
+                                  <label>
+                                    <Field
+                                      type="radio"
+                                      name="candles"
+                                      value="Yes"
+                                    />
+                                    Yes
+                                  </label>
+                                  <Field name="candles">
+                                    {({ field }) => (
+                                      <div
+                                        style={{
+                                          display:
+                                            field.value === "Yes"
+                                              ? "block"
+                                              : "none",
+                                        }}
+                                      >
+                                        <div>
+                                          <label htmlFor="kind-of-candles">
+                                            If so, what would you like?
+                                            <br />
+                                            <Field
+                                              name="candle_message"
+                                              as="textarea"
+                                              className={`form-control ${
+                                                touched.message &&
+                                                errors.message
+                                                  ? "is-invalid"
+                                                  : ""
+                                              }`}
+                                            />
+                                            <ErrorMessage
+                                              name="message"
+                                              component="div"
+                                              className="invalid-feedback"
+                                            />
+                                          </label>
+                                        </div>
+                                      </div>
+                                    )}
+                                  </Field>
+                                </div>
+                                <div>
+                                  <label>
+                                    <Field
+                                      type="radio"
+                                      name="candles"
+                                      value="No"
+                                    />
+                                    No
+                                  </label>
+                                </div>
+                              </div>
+                            </label>
+                          </div>
+                          <br />
+                          <div>
+                            <label>
+                              Please list your floral wishes (extra items that
+                              you would like to have): EX: “I would love flowers
+                              down the aisle if the budget allows, etc…”
+                              <br />
+                              <Field
+                                name="floral_wishes"
+                                as="textarea"
+                                className={`form-control ${
+                                  touched.message && errors.message
+                                    ? "is-invalid"
+                                    : ""
+                                }`}
+                              />
+                              <ErrorMessage
+                                name="message"
+                                component="div"
+                                className="invalid-feedback"
+                              />
+                            </label>
+                          </div>
+                          <br />
+                          <div>
+                            <label>
+                              If you ideas or a vision for your wedding please
+                              share a copy of your pinterest board below:
+                              <Field
+                                component="input"
+                                type="url"
+                                name="pinterest"
+                                placeholder="https://example.com"
+                              />
+                              <br />
+                            </label>
+                          </div>
+                          <br />
+                          <div>
+                            <label>
+                              Please Share some of your other vendors: (For
+                              example your photographer, planner, videographer,
+                              etc!)
+                              <br />
+                              <Field
+                                name="vendors"
+                                as="textarea"
+                                className={`form-control ${
+                                  touched.message && errors.message
+                                    ? "is-invalid"
+                                    : ""
+                                }`}
+                              />
+                              <ErrorMessage
+                                name="message"
+                                component="div"
+                                className="invalid-feedback"
+                              />
+                            </label>
+                          </div>
+                          <br />
+                          <div>
+                            <label>
+                              Any other information you would like to share with
+                              us?
+                              <br />
+                              <Field
+                                name="information"
+                                as="textarea"
+                                className={`form-control ${
+                                  touched.message && errors.message
+                                    ? "is-invalid"
+                                    : ""
+                                }`}
+                              />
+                              <ErrorMessage
+                                name="message"
+                                component="div"
+                                className="invalid-feedback"
+                              />
+                            </label>
+                          </div>
+                          <br />
+                          <div>
+                            <label>
+                              How did you hear about us?
+                              <br />
+                              <Field
+                                name="about_us"
+                                as="textarea"
+                                className={`form-control ${
+                                  touched.message && errors.message
+                                    ? "is-invalid"
+                                    : ""
+                                }`}
+                              />
+                              <ErrorMessage
+                                name="message"
+                                component="div"
+                                className="invalid-feedback"
+                              />
+                            </label>
+                          </div>
+                          <br />
                         </div>
                       )}
                     </Field>
                   </div>
+
                   <div>
                     <label>
                       <Field type="radio" name="reason" value="Event" /> Event
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <Field
+                        type="radio"
+                        name="reason"
+                        value="Floral Workshop"
+                      />{" "}
+                      Floral Workshop
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <Field
+                        type="radio"
+                        name="reason"
+                        value="Branding Event"
+                      />{" "}
+                      Branding Event
                     </label>
                   </div>
                   <div>
@@ -355,34 +647,19 @@ const ContactForm = ({ onHide, ...props }) => {
                   className="invalid-feedback d-block"
                 />
               </div>
-              <div className="mb-3">
-                <label htmlFor="message" className="form-label">
-                  What details would you like to share about about your event?
-                </label>
-                <Field
-                  name="message"
-                  as="textarea"
-                  className={`form-control ${
-                    touched.message && errors.message ? "is-invalid" : ""
-                  }`}
-                />
-                <ErrorMessage
-                  name="message"
-                  component="div"
-                  className="invalid-feedback"
-                />
-              </div>
+
               <div>
                 <button
                   type="submit"
                   variant="primary"
                   disabled={isSubmitting}
-                  className="submit-btn"
+                  className="mb-5"
+                  onClick={() => console.log("Button clicked")}
                 >
                   Send
                 </button>
                 <button type="button" onClick={onHide}>
-                  Close
+                  Hide Form
                 </button>
               </div>
             </Form>

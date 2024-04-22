@@ -666,8 +666,7 @@ const ContactForm = ({ onHide, ...props }) => {
                   type="submit"
                   variant="primary"
                   disabled={isSubmitting}
-                  className="mb-5"
-                  onClick={() => console.log("Button clicked")}
+                  className="send_button"
                 >
                   Send
                 </button>

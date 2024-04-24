@@ -1,6 +1,7 @@
 import "./Footer.scss";
 import { BsInstagram } from "react-icons/bs";
 import Logo from "/newlogo.png";
+
 const Footer = () => {
   return (
     <div className="footerSection">

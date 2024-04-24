@@ -2,6 +2,7 @@ import Hero from "../../components/hero/Hero";
 import Services from "../../components/services/Services";
 import Testimonial from "../../components/testimonial/Testimonial";
 import { NavBar } from "../../components/navbar/NavBar";
+import Footer from "../../components/footer/Footer";
 
 const Home = () => {
   return (
@@ -16,7 +17,9 @@ const Home = () => {
       <section>
         <Services />
       </section>
-      <section>Footer</section>
+      <section>
+        <Footer />
+      </section>
     </div>
   );
 };

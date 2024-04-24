@@ -1,0 +1,27 @@
+.footerSection {
+  background: linear-gradient(180deg, #f9d8cc, #fff7f4);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .titleSection {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+    h1 {
+      font-size: 96px;
+      font-weight: 100;
+    }
+    .instagram {
+      size: 30px;
+      text-decoration: none;
+      color: goldenrod;
+      font-family: "GlacialIndifferenceRegular";
+      padding-top: 40px;
+    }
+  }
+}

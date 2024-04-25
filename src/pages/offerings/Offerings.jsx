@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import OfferSection from "../../components/offeringsSection/OfferSection";
 import QA from "../../components/qAndA/QA";
 import Gallery from "../../components/pictureGallery/Gallery";
+import Footer from "../../components/footer/Footer";
 import "./Offerings.scss";
 
 const Offerings = () => {
@@ -18,7 +19,10 @@ const Offerings = () => {
       <section>
         <QA />
       </section>
-      <section> Footer</section>
+      <section>
+        {" "}
+        <Footer />
+      </section>
     </div>
   );
 };

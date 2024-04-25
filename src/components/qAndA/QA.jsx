@@ -1,6 +1,22 @@
+import React, { useState } from "react";
 import "./QA.scss";
 
 const QA = () => {
+  const [showText, setShowText] = useState(false);
+  const [showMid, setShowMid] = useState(false);
+  const [showHigh, setShowHigh] = useState(false);
+
+  const handleClick = () => {
+    setShowText(!showText);
+  };
+
+  const handleClick2 = () => {
+    setShowMid(!showMid);
+  };
+
+  const handleClick3 = () => {
+    setShowHigh(!showHigh);
+  };
   return (
     <div className="QASection">
       <div className="titleContainer">
@@ -44,16 +60,21 @@ const QA = () => {
       </div>
       <div className="listContainer">
         <div className="box">
-          <h2>3, 500 to 6, 000</h2>
-          <p>
+          <button onClick={handleClick2}>
+            <h2>3, 500 to 6, 000</h2>
+          </button>
+
+          <p className={`text ${showMid ? "visible" : "hidden"}`}>
             Items may include A bridal bouquet with premium blooms Smaller
             bridesmaids bouquets Boutonnieres Small ceremony florals Table
             Florals Delivery & Setup
           </p>
         </div>
         <div className="box">
-          <h2>$7000 to $9000</h2>
-          <p>
+          <button onClick={handleClick3}>
+            <h2>$7000 to $9000</h2>
+          </button>
+          <p className={`text ${showHigh ? "visible" : "hidden"}`}>
             Items may include A bridal bouquet with premium blooms Bridesmaids
             bouquets with premium blooms Boutonnieres Large Ceremony
             Installation Table Florals Candles Bar or Signage Florals Cake
@@ -61,8 +82,10 @@ const QA = () => {
           </p>
         </div>
         <div className="box">
-          <h2>$10,000 and above </h2>
-          <p>
+          <button onClick={handleClick}>
+            <h2>$10,000 and above </h2>
+          </button>
+          <p className={`text ${showText ? "visible" : "hidden"}`}>
             We can go above and beyond to create something truly unique for your
             big day! Items may include A bridal bouquet with premium blooms
             Bridesmaids bouquets with premium blooms Boutonnieres and corsages

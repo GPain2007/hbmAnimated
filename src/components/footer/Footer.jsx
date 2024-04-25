@@ -1,25 +1,34 @@
 import "./Footer.scss";
 import { BsInstagram } from "react-icons/bs";
-import Logo from "/newlogo.png";
+import IMG1 from "/1S0A3668.jpg";
+import IMG2 from "/1S0A3672.jpg";
+import IMG3 from "/NRP_1371.jpg";
 
 const Footer = () => {
   return (
     <div className="footerSection">
       <div className="titleSection">
         <h1>Let's Create Together</h1>
+        <p>Want to work with HBM Flower City?</p>
         <p>
-          Want to work with HBM Flower City? <br /> Send us an email at{" "}
-          <a href="mailto:hbmflowercity@gmail.com">hbmflowercity@gmail.com</a>
-          <span> </span>about your floral needs or click the{" "}
-          <a href="/contact">inquire</a> link to tell us about your event.
+          {" "}
+          Send us an email at hbmflowercity@gmail.com about your floral needs or
+          click the link to tell us about your event.
         </p>
-        <a
+        <a href="/contact">
+          <button>Inquire</button>
+        </a>
+        {/* <a
           href=" https://www.instagram.com/hbm_flowercity"
           className="instagram"
         >
           <BsInstagram size="40px" />
-        </a>
-        <img className="logo" src={Logo} alt="Logo" />
+        </a> */}
+        <div className="imageContainer">
+          <img src={IMG1} alt="image 1" />
+          <img src={IMG2} alt="image 2" />
+          <img src={IMG3} alt="image 3" />
+        </div>
       </div>
     </div>
   );

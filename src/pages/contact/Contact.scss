@@ -1,50 +1,77 @@
 section {
   background: linear-gradient(180deg, #fff7f4, #f9d8cc);
-}
 
-.contact_page {
-  padding: 20px;
-}
+  .contact_page {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .titleContainer {
+      font-size: 55px;
+    }
 
-.paragraph_1 {
-  padding: 20px;
-  h1 {
-    font-size: 34px;
+    .paragraph_1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      h2 {
+        font-size: 34px;
+        font-family: "Montaga", serif;
+        font-weight: bolder;
+        font-style: normal;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .paragraph_2 {
+      padding: 20px;
+      h3 {
+        font-size: 34px;
+
+        font-family: "Montaga", serif;
+        font-weight: bolder;
+        font-style: normal;
+      }
+    }
+
+    .paragraph_3 {
+      padding: 20px;
+      h2 {
+        font-size: 34px;
+        font-family: "Montaga", serif;
+        font-weight: bolder;
+        font-style: normal;
+      }
+      a {
+        font-family: "Montaga", serif;
+        font-weight: bolder;
+        font-style: normal;
+      }
+    }
   }
-}
 
-.paragraph_2 {
-  padding: 10px;
-  h1 {
-    font-size: 24px;
+  .contact_button {
+    cursor: pointer;
+    height: 100px;
+    width: 400px;
+    background-color: #f9d8cc; // Or any desired color
+    color: goldenrod;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 20px; // Adjust as needed
+    transition: all 0.5s ease-out;
   }
-}
 
-.paragraph_3 {
-  padding: 20px;
-  h1 {
-    font-size: 34px;
+  .contact_button:hover {
+    background-color: goldenrod; // Or any desired color on hover
+    color: #f9d8cc;
   }
-}
-
-.contact_button {
-  cursor: pointer;
-  height: 100px;
-  width: 400px;
-  background-color: #f9d8cc; // Or any desired color
-  color: goldenrod;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 55px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin-top: 20px; // Adjust as needed
-  transition: all 0.5s ease-out;
-}
-
-.contact_button:hover {
-  background-color: goldenrod; // Or any desired color on hover
-  color: #f9d8cc;
 }

@@ -1,3 +1,4 @@
+import Carousel from "../carousel/Carousel";
 import "./OfferSection.scss";
 
 const OfferSection = () => {

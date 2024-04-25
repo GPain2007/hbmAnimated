@@ -26,6 +26,11 @@
     margin: auto;
     width: 75vw;
     gap: 5px;
+    p {
+      font-family: "Montaga", serif;
+      font-weight: bolder;
+      font-style: normal;
+    }
   }
 
   .listContainer {
@@ -45,6 +50,9 @@
       transition: all 0.5s ease-out;
       p {
         font-size: 20px;
+        font-family: "Montaga", serif;
+        font-weight: bolder;
+        font-style: normal;
       }
     }
     .box:hover {

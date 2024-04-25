@@ -1,27 +1,76 @@
+@import "../../app.scss";
+
 .footerSection {
   background: linear-gradient(180deg, #f9d8cc, #fff7f4);
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
   .titleSection {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
+    justify-content: center;
+    gap: 10px;
 
     h1 {
       font-size: 96px;
       font-weight: 100;
     }
-    .instagram {
-      size: 30px;
-      text-decoration: none;
+    button {
+      cursor: pointer;
+      height: 90px;
+      width: 250px;
+      background-color: #f9d8cc; // Or any desired color
       color: goldenrod;
-      font-family: "GlacialIndifferenceRegular";
-      padding-top: 40px;
+      padding: 10px 20px;
+      border-radius: 25px;
+      border: none;
+      font-size: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      transition: all 0.5s ease-out;
+    }
+    button:hover {
+      background-color: goldenrod; // Or any desired color on hover
+      color: #f9d8cc;
+    }
+  }
+  p {
+    font-size: 33px;
+    display: flex;
+    //   padding: 0px 105px;
+    align-items: center;
+    justify-content: center;
+  }
+  .instagram {
+    size: 20px;
+    text-decoration: none;
+    color: goldenrod;
+    font-family: "GlacialIndifferenceRegular";
+  }
+  .imageContainer {
+    flex: 2;
+    height: 100%;
+    position: relative;
+
+    img {
+      height: 60vh;
+      width: 25vw;
+      display: inline;
+      padding: 0px 5px;
+    }
+
+    @include mobile {
+      height: 50%;
+      width: 100%;
+      top: unset;
+      right: unset;
+      left: 21.5rem;
+      bottom: 32rem;
     }
   }
 }

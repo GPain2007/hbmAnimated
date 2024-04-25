@@ -1,6 +1,8 @@
 import "./navbar.scss";
 import { motion } from "framer-motion";
 import { Siderbar } from "../siderbar/Siderbar";
+import { FaPinterest } from "react-icons/fa";
+import TikTok from "/tiktok.png";
 
 export const NavBar = () => {
   return (
@@ -16,17 +18,15 @@ export const NavBar = () => {
         </motion.span>
 
         <div className="social">
-          <a href="#">
-            <img src="/facebook.png" alt="" />
+          <a href="https://www.instagram.com/hbm_flowercity">
+            <img src="/instagram.png" alt="instagram" />
           </a>
-          <a href="">
-            <img src="/instagram.png" alt="" />
+
+          <a href="https://www.tiktok.com/@hbm_flowercity">
+            <img src={TikTok} alt="tittok" />
           </a>
-          <a href="">
-            <img src="/youtube.png" alt="" />
-          </a>
-          <a href="">
-            <img src="/dribbble.png" alt="" />
+          <a href="https://www.pinterest.com/harolynmunford/">
+            <FaPinterest />
           </a>
         </div>
       </div>

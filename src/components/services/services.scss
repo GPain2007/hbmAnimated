@@ -16,12 +16,10 @@
       font-weight: 200;
       font-size: 20px;
       text-align: right;
-    }
-
-    hr {
-      width: 250px;
-      border: none;
-      border-top: 0.5px solid;
+      letter-spacing: 10px;
+      font-family: "Montaga", serif;
+      font-weight: bolder;
+      font-style: normal;
     }
   }
   .titleContainer {
@@ -36,10 +34,29 @@
       font-weight: 100;
     }
     button {
-      padding: 10px;
-      background-color: #fff7f4;
-      border: none;
       cursor: pointer;
+      height: 90px;
+      width: 250px;
+      background-color: #f9d8cc; // Or any desired color
+      color: goldenrod;
+      padding: 10px 20px;
+      border-radius: 25px;
+      border: none;
+      font-size: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      transition: all 0.5s ease-out;
+    }
+    button:hover {
+      background-color: goldenrod; // Or any desired color on hover
+      color: #f9d8cc;
+    }
+    hr {
+      width: 1075px;
+      border: none;
+      border-top: 2.5px solid;
     }
   }
   .listContainer {
@@ -56,6 +73,11 @@
       flex-direction: column;
       align-items: center;
       gap: 30px;
+      p {
+        font-family: "Montaga", serif;
+        font-weight: bolder;
+        font-style: normal;
+      }
     }
   }
 }

@@ -28,19 +28,12 @@ const boxVariants = {
 const Services = () => {
   return (
     <motion.div className="services">
-      <motion.div className="textContainer">
-        <p>
-          {" "}
-          "I Love Weddings that are a Little Bit Girly
-          <br />A Little Bit Flirty & Always Unique!"
-        </p>
-        <hr />
-      </motion.div>
       <motion.div className="titleContainer">
         <h1>Our Process For Weddings</h1>
         <Link to="/offerings">
           <button>Inquire</button>
         </Link>
+        <hr />
       </motion.div>
       <motion.div className="listContainer">
         <motion.div

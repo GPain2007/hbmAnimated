@@ -1,6 +1,6 @@
 @import "../../app.scss";
 
-.imageContainer {
+.imageContainerSlider {
   flex: 2;
   height: 100%;
   position: relative;
@@ -10,28 +10,54 @@
     white-space: nowrap;
     padding: 10px;
   }
-}
-.imageContainer img {
-  height: 60vh;
-  width: 25vw;
+  img {
+    height: 60vh;
+    width: 25vw;
 
-  padding: 0px 5px;
-  @include mobile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 95vw;
-    height: initial;
-    // margin-left: 45px;
-    max-width: 932px;
-  }
-}
-
-@media (max-width: 768px) {
-  .imageContainer {
-    img:nth-child(n + 2) {
-      /* Hide all images except the first on small screens */
-      display: none;
+    padding: 0px 5px;
+    @include mobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 95vw;
+      height: initial;
+      // margin-left: 45px;
+      max-width: 932px;
+    }
+    @media (max-width: 768px) {
+      .imageContainerSlider {
+        img:nth-child(n + 2) {
+          /* Hide all images except the first on small screens */
+          display: none;
+        }
+      }
     }
   }
 }
+
+// .imageContainerSlider {
+//   flex: 2;
+//   height: 100%;
+//   position: relative;
+//   @include mobile {
+//     flex: initial;
+//     height: initial;
+//     position: initial;
+//     background-color: #333;
+//     overflow: hidden;
+//     white-space: nowrap;
+//     padding: 10px;
+//   }
+//   img {
+//     height: 60vh;
+//     width: 25vw;
+//     display: inline;
+//     padding: 0px 5px;
+//     @include mobile {
+//       display: inline-block;
+//       width: 75vw;
+//       padding: 5px;
+//       max-width: 932px;
+//     }
+//   }
+// }

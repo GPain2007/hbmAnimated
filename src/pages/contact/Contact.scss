@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 section {
   background: linear-gradient(180deg, #fff7f4, #f9d8cc);
 
@@ -9,6 +11,9 @@ section {
 
     .titleContainer {
       font-size: 55px;
+      @include mobile {
+        font-size: 22.5px;
+      }
     }
 
     .paragraph_1 {
@@ -24,6 +29,9 @@ section {
         display: flex;
         justify-content: center;
         align-items: center;
+        @include mobile {
+          font-size: 17px;
+        }
       }
     }
 
@@ -35,6 +43,9 @@ section {
         font-family: "Montaga", serif;
         font-weight: bolder;
         font-style: normal;
+        @include mobile {
+          font-size: 17px;
+        }
       }
     }
 
@@ -45,6 +56,9 @@ section {
         font-family: "Montaga", serif;
         font-weight: bolder;
         font-style: normal;
+        @include mobile {
+          font-size: 17px;
+        }
       }
       a {
         font-family: "Montaga", serif;
@@ -66,9 +80,15 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-
     margin-top: 20px; // Adjust as needed
     transition: all 0.5s ease-out;
+    @include mobile {
+      height: 50px;
+      width: 200px;
+      font-size: 27.5px;
+      padding: 5px 10px;
+      border-radius: 12.5px;
+    }
   }
 
   .contact_button:hover {

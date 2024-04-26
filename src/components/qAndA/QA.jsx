@@ -61,7 +61,7 @@ const QA = () => {
       <div className="listContainer">
         <div className="box">
           <button onClick={handleClick2}>
-            <h2>3, 500 to 6, 000</h2>
+            <h2>$3, 500 to $6, 000</h2>
           </button>
 
           <p className={`text ${showMid ? "visible" : "hidden"}`}>

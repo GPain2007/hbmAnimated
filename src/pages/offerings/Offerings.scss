@@ -31,7 +31,9 @@
 
 @media screen and (max-width: 600px) {
   .gallery-section .column {
-    flex: 100%;
-    max-width: 100%;
+    display: none;
+    section {
+      height: 0vpx;
+    }
   }
 }

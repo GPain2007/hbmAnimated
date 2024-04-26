@@ -1,0 +1,37 @@
+@import "../../app.scss";
+
+.imageContainer {
+  flex: 2;
+  height: 100%;
+  position: relative;
+  @include mobile {
+    background-color: #333;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px;
+  }
+}
+.imageContainer img {
+  height: 60vh;
+  width: 25vw;
+
+  padding: 0px 5px;
+  @include mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95vw;
+    height: initial;
+    // margin-left: 45px;
+    max-width: 932px;
+  }
+}
+
+@media (max-width: 768px) {
+  .imageContainer {
+    img:nth-child(n + 2) {
+      /* Hide all images except the first on small screens */
+      display: none;
+    }
+  }
+}

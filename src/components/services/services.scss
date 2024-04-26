@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .services {
   background: linear-gradient(180deg, #fff7f4, #f9d8cc);
   height: 100%;
@@ -28,10 +30,17 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    @include mobile {
+      gap: 15px;
+      flex: initial;
+    }
 
     h1 {
       font-size: 96px;
       font-weight: 100;
+      @include mobile {
+        font-size: 36px;
+      }
     }
     button {
       cursor: pointer;
@@ -46,8 +55,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
       transition: all 0.5s ease-out;
+      @include mobile {
+        height: 45px;
+        width: 95px;
+        font-size: 22.5px;
+        padding: 5px 10px;
+        border-radius: 12.5px;
+      }
     }
     button:hover {
       background-color: goldenrod; // Or any desired color on hover
@@ -57,6 +72,9 @@
       width: 1075px;
       border: none;
       border-top: 2.5px solid;
+      @include mobile {
+        width: 310px;
+      }
     }
   }
   .listContainer {
@@ -64,7 +82,10 @@
     display: flex;
     max-width: 1366px;
     margin: auto;
-
+    @include mobile {
+      max-width: 932px;
+      display: unset;
+    }
     .box {
       padding: 50px;
       width: 342px;
@@ -73,6 +94,11 @@
       flex-direction: column;
       align-items: center;
       gap: 30px;
+      @include mobile {
+        gap: 10px;
+        padding: 15px;
+      }
+
       p {
         font-family: "Montaga", serif;
         font-weight: bolder;

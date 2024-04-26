@@ -234,8 +234,8 @@ const ContactForm = ({ onHide, ...props }) => {
               <div className="florals_for">
                 <label className="form-label">Florals for:</label>
                 <div role="group" aria-labelledby="reason-group">
-                  <div>
-                    <label>
+                  <div className="form-label">
+                    <label className="form-label">
                       <Field type="radio" name="reason" value="Wedding" />{" "}
                       Wedding
                     </label>
@@ -273,12 +273,12 @@ const ContactForm = ({ onHide, ...props }) => {
                           </div>
 
                           <div className="couples">
-                            <label htmlFor="couples">
+                            <label htmlFor="couples" className="form-label">
                               The Couples Names: ( please include first and last
                               name of each)
                             </label>
                             <div>
-                              <label className="name"> 1)</label>
+                              <label className="form-label"> 1)</label>
                               <Field
                                 component="input"
                                 type="text"
@@ -287,7 +287,7 @@ const ContactForm = ({ onHide, ...props }) => {
                               />
                             </div>
                             <div>
-                              <label className="name"> 2)</label>
+                              <label className="form-label"> 2)</label>
                               <Field
                                 component="input"
                                 type="text"
@@ -445,12 +445,12 @@ const ContactForm = ({ onHide, ...props }) => {
                           </div>
 
                           <div>
-                            <label htmlFor="candles">
+                            <label htmlFor="candles" className="form-label">
                               Will you need candles for your wedding &
                               reception?
                               <div role="group" aria-labelledby="reason-group">
                                 <div>
-                                  <label>
+                                  <label className="form-label">
                                     <Field
                                       type="radio"
                                       name="candles"
@@ -469,7 +469,10 @@ const ContactForm = ({ onHide, ...props }) => {
                                         }}
                                       >
                                         <div className="message">
-                                          <label htmlFor="kind-of-candles">
+                                          <label
+                                            htmlFor="kind-of-candles"
+                                            className="form-label"
+                                          >
                                             If so, what would you like?
                                             <br />
                                             <Field
@@ -494,7 +497,7 @@ const ContactForm = ({ onHide, ...props }) => {
                                   </Field>
                                 </div>
                                 <div>
-                                  <label>
+                                  <label className="form-label">
                                     <Field
                                       type="radio"
                                       name="candles"
@@ -613,12 +616,12 @@ const ContactForm = ({ onHide, ...props }) => {
                   </div>
 
                   <div>
-                    <label>
+                    <label className="form-label">
                       <Field type="radio" name="reason" value="Event" /> Event
                     </label>
                   </div>
                   <div>
-                    <label>
+                    <label className="form-label">
                       <Field
                         type="radio"
                         name="reason"
@@ -628,7 +631,7 @@ const ContactForm = ({ onHide, ...props }) => {
                     </label>
                   </div>
                   <div>
-                    <label>
+                    <label className="form-label">
                       <Field
                         type="radio"
                         name="reason"
@@ -638,7 +641,7 @@ const ContactForm = ({ onHide, ...props }) => {
                     </label>
                   </div>
                   <div>
-                    <label>
+                    <label className="form-label">
                       <Field
                         type="radio"
                         name="reason"
@@ -649,7 +652,7 @@ const ContactForm = ({ onHide, ...props }) => {
                   </div>
 
                   <div>
-                    <label>
+                    <label className="form-label">
                       <Field type="radio" name="reason" value="Other" /> Other
                     </label>
                   </div>

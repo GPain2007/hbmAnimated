@@ -13,10 +13,17 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+    @include mobile {
+      gap: 0px;
+      margin-top: 5px;
+    }
 
     h1 {
       font-size: 96px;
       font-weight: 100;
+      @include mobile {
+        font-size: 36px;
+      }
     }
     button {
       cursor: pointer;
@@ -31,8 +38,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
       transition: all 0.5s ease-out;
+      @include mobile {
+        height: 45px;
+        width: 95px;
+        font-size: 22.5px;
+        padding: 5px 10px;
+        border-radius: 12.5px;
+      }
     }
     button:hover {
       background-color: goldenrod; // Or any desired color on hover
@@ -42,35 +55,37 @@
   p {
     font-size: 33px;
     display: flex;
-    //   padding: 0px 105px;
     align-items: center;
     justify-content: center;
-  }
-  .instagram {
-    size: 20px;
-    text-decoration: none;
-    color: goldenrod;
-    font-family: "GlacialIndifferenceRegular";
-  }
-  .imageContainer {
-    flex: 2;
-    height: 100%;
-    position: relative;
-
-    img {
-      height: 60vh;
-      width: 25vw;
-      display: inline;
-      padding: 0px 5px;
-    }
-
     @include mobile {
-      height: 50%;
-      width: 100%;
-      top: unset;
-      right: unset;
-      left: 21.5rem;
-      bottom: 32rem;
+      font-size: 16.5px;
+      padding: 15px;
     }
   }
+  // .imageContainer {
+  //   flex: 2;
+  //   height: 100%;
+  //   position: relative;
+  //   @include mobile {
+  //     flex: initial;
+  //     height: initial;
+  //     position: initial;
+  //     background-color: #333;
+  //     overflow: hidden;
+  //     white-space: nowrap;
+  //     padding: 10px;
+  //   }
+  //   img {
+  //     height: 60vh;
+  //     width: 25vw;
+  //     display: inline;
+  //     padding: 0px 5px;
+  //     @include mobile {
+  //       display: inline-block;
+  //       width: 75vw;
+  //       padding: 5px;
+  //       max-width: 932px;
+  //     }
+  //   }
+  // }
 }

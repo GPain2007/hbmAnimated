@@ -1,8 +1,5 @@
 import "./Footer.scss";
-import { BsInstagram } from "react-icons/bs";
-import IMG1 from "/1S0A3668.jpg";
-import IMG2 from "/1S0A3672.jpg";
-import IMG3 from "/NRP_1371.jpg";
+import ImageSlider from "../imageSlider/ImageSlider";
 
 const Footer = () => {
   return (
@@ -18,18 +15,8 @@ const Footer = () => {
         <a href="/contact">
           <button>Inquire</button>
         </a>
-        {/* <a
-          href=" https://www.instagram.com/hbm_flowercity"
-          className="instagram"
-        >
-          <BsInstagram size="40px" />
-        </a> */}
-        <div className="imageContainer">
-          <img src={IMG1} alt="image 1" />
-          <img src={IMG2} alt="image 2" />
-          <img src={IMG3} alt="image 3" />
-        </div>
       </div>
+      <ImageSlider />
     </div>
   );
 };

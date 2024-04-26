@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Container, Button } from "react-bootstrap";
 import { NavBar } from "../../components/navbar/NavBar";
 import ContactForm from "../../components/contactForm/ContactForm";
 import "./Contact.scss";
@@ -11,7 +10,11 @@ const Contact = () => {
       <section>
         <NavBar />
         <div className="contact_page">
-          <ContactForm show={modalShow} onHide={() => setModalShow(false)} />
+          <ContactForm
+            className="contactForm"
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+          />
           <div className="titleContainer">
             <h1>Wedding, Events & More</h1>
           </div>
@@ -42,10 +45,7 @@ const Contact = () => {
             </h2>
           </div>
 
-          <div
-            className="contact_button" // Use your custom class
-            onClick={() => setModalShow(true)}
-          >
+          <div className="contact_button" onClick={() => setModalShow(true)}>
             Contact US
           </div>
         </div>

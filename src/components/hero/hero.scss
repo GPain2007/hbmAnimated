@@ -38,6 +38,10 @@
         font-family: "Montaga", serif;
         font-weight: bolder;
         font-style: normal;
+        @include mobile {
+          font-size: 15px;
+          letter-spacing: 5px;
+        }
       }
 
       h1 {
@@ -49,6 +53,9 @@
 
       img {
         width: 100px;
+        @include mobile {
+          width: 50px;
+        }
       }
     }
   }
@@ -65,7 +72,7 @@
       top: unset;
       right: unset;
       left: 21.5rem;
-      bottom: 32rem;
+      bottom: 20rem;
     }
   }
 
@@ -77,5 +84,9 @@
     color: rgba(218, 165, 32, 0.148);
     width: 50%;
     font-weight: bold;
+    @include mobile {
+    }
+    font-size: 25vh;
+    bottom: -28px;
   }
 }

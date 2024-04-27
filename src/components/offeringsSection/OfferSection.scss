@@ -1,8 +1,5 @@
 @import "../../app.scss";
 section {
-  @include mobile {
-    height: 70vh;
-  }
   .offerSection {
     background: linear-gradient(180deg, #f9d8cc, #fff7f4);
 
@@ -61,7 +58,7 @@ section {
         gap: 15px;
         transition: all 0.5s ease-out;
         @include mobile {
-          padding: 30px;
+          padding: 15px;
           gap: 5px;
           width: 100vw;
         }

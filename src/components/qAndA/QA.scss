@@ -38,7 +38,7 @@
     gap: 5px;
     h1 {
       @include mobile {
-        font-size: 16px;
+        font-size: 12.5px;
       }
     }
 
@@ -76,12 +76,13 @@
       gap: 15px;
       h2 {
         @include mobile {
-          font-size: 15px;
+          font-size: 9.5px;
         }
       }
       @include mobile {
         width: initial;
-        padding: 15px;
+        padding: 2.5px 5px 2.5px 5px;
+        gap: 2px;
       }
 
       p {
@@ -90,7 +91,7 @@
         font-weight: bolder;
         font-style: normal;
         @include mobile {
-          font-size: 12px;
+          font-size: 8px;
         }
       }
       .text {

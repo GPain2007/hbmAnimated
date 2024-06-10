@@ -1,5 +1,7 @@
-import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+import { useState } from "react";
+import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
 import emailjs, { send } from "emailjs-com";
 import "./Contact_From.scss";
@@ -22,7 +24,11 @@ const validationSchema = Yup.object().shape({
   venue: Yup.string()
     .min(3, "Name must be at least 3 characters")
     .max(50, "Name must be less than 50 characters"),
-  phone: Yup.number(),
+  // phone: Yup.number(),
+  phone: Yup.string().matches(
+    /^\d{3}-\d{3}-\d{4}$/,
+    "Phone number must be in the format XXX-XXX-XXXX"
+  ),
   guest_count: Yup.number(),
   number_party: Yup.number(),
   floral_design_needs: Yup.string()
@@ -157,17 +163,49 @@ const sendEmail = (values, actions) => {
       "4G1ZboWGj8Eab1SFK"
     )
     .then(
-      (response) => {
+      (_response) => {
         actions.setSubmitting(false);
         actions.resetForm();
         alert("Your message has been sent! We will get back with you shortly.");
       },
-      (error) => {
+      // eslint-disable-next-line no-unused-vars
+      (_error) => {
         actions.setSubmitting(false);
         alert("Failed to send message. Please try again later.");
       }
     );
   console.log(selectedData);
+};
+const formatPhoneNumber = (value) => {
+  const phoneNumber = value.replace(/[^\d]/g, "");
+  const phoneNumberLength = phoneNumber.length;
+  if (phoneNumberLength < 10) return phoneNumber;
+  if (phoneNumberLength < 10)
+    return `${phoneNumber.slice(0, 3)}-${phoneNumber.slice(3, 6)}`;
+  return `${phoneNumber.slice(0, 3)}-${phoneNumber.slice(
+    3,
+    6
+  )}-${phoneNumber.slice(6, 10)}`;
+};
+
+const PhoneField = ({ field, form }) => {
+  const handleChange = (e) => {
+    const formattedPhoneNumber = formatPhoneNumber(e.target.value);
+    form.setFieldValue(field.name, formattedPhoneNumber);
+  };
+
+  return (
+    <input
+      {...field}
+      type="tel"
+      onChange={handleChange}
+      placeholder="512-555-5555"
+      title="Phone number should be in the format 512-555-5555"
+      className={`form-control ${
+        form.touched[field.name] && form.errors[field.name] ? "is-invalid" : ""
+      }`}
+    />
+  );
 };
 
 const ContactForm = ({ onHide, ...props }) => {
@@ -302,11 +340,21 @@ const ContactForm = ({ onHide, ...props }) => {
                               Phone:
                             </label>
                             <Field
-                              type="tel"
+                              // type="tel"
+                              // id="phone"
+                              // name="phone"
+                              // value={phone}
+                              // onChnage={handleChange}
+                              // // onBlur={formik.handleBlur}
+                              // placeholder="512-555-5555"
+                              // title="Phone number should be in the format 512-555-5555"
+                              // className={`form-control ${
+                              //   formik.touched.phone && formik.errors.phone
+                              //     ? "is-invalid"
+                              //     : ""
+                              // }`}
                               name="phone"
-                              className={`form-control ${
-                                touched.name && errors.name ? "is-invalid" : ""
-                              }`}
+                              component={PhoneField}
                             />
                             <ErrorMessage
                               name="phone"
@@ -667,6 +715,7 @@ const ContactForm = ({ onHide, ...props }) => {
               <div>
                 <button
                   type="submit"
+                  // eslint-disable-next-line react/no-unknown-property
                   variant="primary"
                   disabled={isSubmitting}
                   className="send_button"

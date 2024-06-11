@@ -45,10 +45,9 @@ const Services = () => {
         >
           <h2>Inquiry</h2>
           <p>
-            After you determine which package best fits your needs, fill out our
-            inquiry form to give us more details about your needs. Once we
-            determine that your date is available we will reach out to you to
-            get more details.
+            We ask that you fill out our inquiry form to give us more details
+            about your upcoming event. Once we determine that your date is
+            available we will reach out to you to get more specifics.
           </p>
         </motion.div>
         <motion.div
@@ -60,12 +59,11 @@ const Services = () => {
         >
           <h2>Proposal</h2>
           <p>
-            Once your date is available we will send out an additional
-            questionnaire to gather specific design details for your event. From
-            here we create a custom proposal that will give you a vision of your
-            big day and an estimated cost. If you like the proposal a
-            consultation will be set up to walk through your proposal and
-            discuss further design details.
+            Once your date is determined to be available, we will create a
+            custom proposal that will give you a vision of your big day and an
+            estimated cost. If you like the proposal, a consultation will be set
+            up to walk you through your proposal and discuss further design
+            details.
           </p>
         </motion.div>
         <motion.div
@@ -78,7 +76,8 @@ const Services = () => {
           <h2>Booking</h2>
           <p>
             Are you ready to save the date? Simply review and sign your contract
-            and make your deposit (deposit is non-refundable).
+            and pay your deposit. Please remember that your deposit is
+            non-refundable.
           </p>
         </motion.div>
         <motion.div

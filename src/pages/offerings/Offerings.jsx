@@ -1,5 +1,5 @@
 import { NavBar } from "../../components/navbar/NavBar";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import OfferSection from "../../components/offeringsSection/OfferSection";
 import QA from "../../components/qAndA/QA";
 import Gallery from "../../components/pictureGallery/Gallery";

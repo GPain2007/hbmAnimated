@@ -65,9 +65,15 @@ const QA = () => {
           </button>
 
           <p className={`text ${showMid ? "visible" : "hidden"}`}>
-            Items may include A bridal bouquet with premium blooms Smaller
-            bridesmaids bouquets Boutonnieres Small ceremony florals Table
-            Florals Delivery & Setup
+            <p>Items may include:</p>
+            <ul>
+              <li>A bridal bouquet with premium blooms</li>
+              <li>Smaller bridesmaids bouquets</li>
+              <li>Boutonnieres</li>
+              <li>Small ceremony florals</li>
+              <li>Table Florals</li>
+              <li>Delivery & Setup</li>
+            </ul>
           </p>
         </div>
         <div className="box">
@@ -75,10 +81,18 @@ const QA = () => {
             <h2>$7000 to $9000</h2>
           </button>
           <p className={`text ${showHigh ? "visible" : "hidden"}`}>
-            Items may include A bridal bouquet with premium blooms Bridesmaids
-            bouquets with premium blooms Boutonnieres Large Ceremony
-            Installation Table Florals Candles Bar or Signage Florals Cake
-            Florals Delivery & Setup
+            <p>Items may include:</p>
+            <ul>
+              <li>A bridal bouquet with premium blooms</li>
+              <li>Bridesmaids bouquets with premium blooms</li>
+              <li>Boutonnieres</li>
+              <li>Large Ceremony Installation</li>
+              <li>Table Florals</li>
+              <li>Candles</li>
+              <li>Bar or Signage Florals</li>
+              <li>Cake Florals</li>
+              <li>Delivery & Setup</li>
+            </ul>{" "}
           </p>
         </div>
         <div className="box">
@@ -86,12 +100,19 @@ const QA = () => {
             <h2>$10,000 and above </h2>
           </button>
           <p className={`text ${showText ? "visible" : "hidden"}`}>
-            We can go above and beyond to create something truly unique for your
-            big day! Items may include A bridal bouquet with premium blooms
-            Bridesmaids bouquets with premium blooms Boutonnieres and corsages
-            with premium blooms Epic Ceremony Installation Large Table Florals
-            Candles Sweetheart Table Florals Bar Florals Signage Florals Cake
-            Florals Delivery & Setup
+            <p>Items may include:</p>
+            <ul>
+              <li>A bridal bouquet with premium blooms</li>
+              <li>Bridesmaids bouquets with premium blooms</li>
+              <li>Boutonnieres and corsages with premium blooms</li>
+              <li>Epic Ceremony Installation</li>
+              <li>Large Table Florals</li>
+              <li>Candles</li>
+              <li>Sweetheart Table Florals</li>
+              <li>Bar & Signage Florals</li>
+              <li>Cake Florals</li>
+              <li>Delivery & Setup</li>
+            </ul>{" "}
           </p>
         </div>
       </div>

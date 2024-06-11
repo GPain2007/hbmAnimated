@@ -36,14 +36,7 @@ const Links = () => {
       >
         Home
       </motion.a>
-      <motion.a
-        href="/contact"
-        variants={itemVariants}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        Contact
-      </motion.a>
+
       <motion.a
         href="/offerings"
         variants={itemVariants}
@@ -51,6 +44,14 @@ const Links = () => {
         whileTap={{ scale: 0.95 }}
       >
         Offerings
+      </motion.a>
+      <motion.a
+        href="/contact"
+        variants={itemVariants}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        Contact
       </motion.a>
     </motion.div>
   );

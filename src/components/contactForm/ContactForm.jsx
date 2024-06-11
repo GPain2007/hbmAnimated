@@ -41,6 +41,22 @@ const validationSchema = Yup.object().shape({
   candle_message: Yup.string()
     .min(10, "Message must be at least 10 characters")
     .max(500, "Message must be less than 500 characters"),
+  files: Yup.mixed()
+    .nullable()
+    .test(
+      "fileSize",
+      "File too large",
+      (value) => !value || (value && value.size <= 26214400)
+    )
+    .test("fileType", "Unsupported File Format", (value) => {
+      const SUPPORTED_FORMATS = [
+        "image/jpg",
+        "image/jpeg",
+        "image/png",
+        "application/pdf",
+      ];
+      return !value || (value && SUPPORTED_FORMATS.includes(value.type));
+    }),
 });
 
 const initialValues = {
@@ -64,96 +80,110 @@ const initialValues = {
   pinterest: "",
   vendors: "",
   information: "",
+  files: null,
 };
 
 const sendEmail = (values, actions) => {
-  const selectedData = {};
-  const { name, email, reason, ...otherValues } = values;
+  // const selectedData = {};
+  const selectedData = new FormData();
+  const { name, email, reason, files, ...otherValues } = values;
   selectedData.from_name = name;
   selectedData.from_email = email;
   selectedData.reason = reason;
 
-  if (otherValues.number_party && !isNaN(otherValues.number_party)) {
-    selectedData.number_party = otherValues.number_party;
+  for (let key in otherValues) {
+    if (otherValues[key]) {
+      selectedData.append(key, otherValues[key]);
+    }
   }
 
-  if (otherValues.guest_count && !isNaN(otherValues.guest_count)) {
-    selectedData.guest_count = otherValues.guest_count;
+  if (files) {
+    Array.from(files).forEach((file) => {
+      selectedData.append("files", file);
+    });
   }
 
-  if (otherValues.couple_name1 && otherValues.couple_name1.trim() !== "") {
-    selectedData.couple_name1 = otherValues.couple_name1;
-  }
-  if (otherValues.couple_name2 && otherValues.couple_name2.trim() !== "") {
-    selectedData.couple_name2 = otherValues.couple_name2;
-  }
+  // if (otherValues.number_party && !isNaN(otherValues.number_party)) {
+  //   selectedData.number_party = otherValues.number_party;
+  // }
 
-  if (otherValues.whoIAm && otherValues.whoIAm.trim() !== "") {
-    selectedData.whoIAm = otherValues.whoIAm;
-  }
+  // if (otherValues.guest_count && !isNaN(otherValues.guest_count)) {
+  //   selectedData.guest_count = otherValues.guest_count;
+  // }
 
-  if (otherValues.couple_names && otherValues.couple_names.trim() !== "") {
-    selectedData.couple_names = otherValues.couple_names;
-  }
+  // if (otherValues.couple_name1 && otherValues.couple_name1.trim() !== "") {
+  //   selectedData.couple_name1 = otherValues.couple_name1;
+  // }
+  // if (otherValues.couple_name2 && otherValues.couple_name2.trim() !== "") {
+  //   selectedData.couple_name2 = otherValues.couple_name2;
+  // }
 
-  if (otherValues.phone && otherValues.phone.trim() !== "") {
-    selectedData.from_phone = otherValues.phone;
-  }
+  // if (otherValues.whoIAm && otherValues.whoIAm.trim() !== "") {
+  //   selectedData.whoIAm = otherValues.whoIAm;
+  // }
 
-  if (otherValues.phone && otherValues.phone.trim() !== "") {
-    selectedData.from_phone = otherValues.phone;
-  }
+  // if (otherValues.couple_names && otherValues.couple_names.trim() !== "") {
+  //   selectedData.couple_names = otherValues.couple_names;
+  // }
 
-  if (otherValues.date && otherValues.date.trim() !== "") {
-    selectedData.from_date = otherValues.date;
-  }
+  // if (otherValues.phone && otherValues.phone.trim() !== "") {
+  //   selectedData.from_phone = otherValues.phone;
+  // }
 
-  if (otherValues.budget && !isNaN(otherValues.budget)) {
-    selectedData.from_budget = otherValues.budget;
-  }
+  // if (otherValues.phone && otherValues.phone.trim() !== "") {
+  //   selectedData.from_phone = otherValues.phone;
+  // }
 
-  if (otherValues.venue && otherValues.venue.trim() !== "") {
-    selectedData.from_venue = otherValues.venue;
-  }
+  // if (otherValues.date && otherValues.date.trim() !== "") {
+  //   selectedData.from_date = otherValues.date;
+  // }
 
-  if (otherValues.message && otherValues.message.trim() !== "") {
-    selectedData.message = otherValues.message;
-  }
+  // if (otherValues.budget && !isNaN(otherValues.budget)) {
+  //   selectedData.from_budget = otherValues.budget;
+  // }
 
-  if (
-    otherValues.floral_design_needs &&
-    otherValues.floral_design_needs.trim() !== ""
-  ) {
-    selectedData.floral_design_needs = otherValues.floral_design_needs;
-  }
+  // if (otherValues.venue && otherValues.venue.trim() !== "") {
+  //   selectedData.from_venue = otherValues.venue;
+  // }
 
-  if (otherValues.floral_wishes && otherValues.floral_wishes.trim() !== "") {
-    selectedData.floral_wishes = otherValues.floral_wishes;
-  }
+  // if (otherValues.message && otherValues.message.trim() !== "") {
+  //   selectedData.message = otherValues.message;
+  // }
 
-  if (otherValues.candle_message) {
-    selectedData.candle_message = otherValues.candle_message;
-  }
+  // if (
+  //   otherValues.floral_design_needs &&
+  //   otherValues.floral_design_needs.trim() !== ""
+  // ) {
+  //   selectedData.floral_design_needs = otherValues.floral_design_needs;
+  // }
 
-  if (otherValues.candles) {
-    selectedData.candles = otherValues.candles;
-  }
+  // if (otherValues.floral_wishes && otherValues.floral_wishes.trim() !== "") {
+  //   selectedData.floral_wishes = otherValues.floral_wishes;
+  // }
 
-  if (otherValues.pinterest) {
-    selectedData.pinterest = otherValues.pinterest;
-  }
+  // if (otherValues.candle_message) {
+  //   selectedData.candle_message = otherValues.candle_message;
+  // }
 
-  if (otherValues.vendors && otherValues.vendors.trim() !== "") {
-    selectedData.vendors = otherValues.vendors;
-  }
+  // if (otherValues.candles) {
+  //   selectedData.candles = otherValues.candles;
+  // }
 
-  if (otherValues.information && otherValues.information.trim() !== "") {
-    selectedData.information = otherValues.information;
-  }
+  // if (otherValues.pinterest) {
+  //   selectedData.pinterest = otherValues.pinterest;
+  // }
 
-  if (otherValues.about_us && otherValues.about_us.trim() !== "") {
-    selectedData.about_us = otherValues.about_us;
-  }
+  // if (otherValues.vendors && otherValues.vendors.trim() !== "") {
+  //   selectedData.vendors = otherValues.vendors;
+  // }
+
+  // if (otherValues.information && otherValues.information.trim() !== "") {
+  //   selectedData.information = otherValues.information;
+  // }
+
+  // if (otherValues.about_us && otherValues.about_us.trim() !== "") {
+  //   selectedData.about_us = otherValues.about_us;
+  // }
 
   emailjs
     .send(
@@ -208,6 +238,22 @@ const PhoneField = ({ field, form }) => {
   );
 };
 
+const FileUploadField = ({ field, form }) => {
+  const handleChange = (e) => {
+    form.setFieldValue(field.name, e.target.files);
+  };
+
+  return (
+    <input
+      {...field}
+      type="file"
+      onChange={handleChange}
+      multiple
+      className="form-control"
+    />
+  );
+};
+
 const ContactForm = ({ onHide, ...props }) => {
   return (
     <div
@@ -230,7 +276,7 @@ const ContactForm = ({ onHide, ...props }) => {
             sendEmail(values, actions);
           }}
         >
-          {({ isSubmitting, touched, errors }) => (
+          {({ isSubmitting, touched, errors, setFieldValue }) => (
             <Form>
               <div className="name">
                 <label htmlFor="name" className="form-label">
@@ -339,23 +385,7 @@ const ContactForm = ({ onHide, ...props }) => {
                             <label htmlFor="phone" className="form-label">
                               Phone:
                             </label>
-                            <Field
-                              // type="tel"
-                              // id="phone"
-                              // name="phone"
-                              // value={phone}
-                              // onChnage={handleChange}
-                              // // onBlur={formik.handleBlur}
-                              // placeholder="512-555-5555"
-                              // title="Phone number should be in the format 512-555-5555"
-                              // className={`form-control ${
-                              //   formik.touched.phone && formik.errors.phone
-                              //     ? "is-invalid"
-                              //     : ""
-                              // }`}
-                              name="phone"
-                              component={PhoneField}
-                            />
+                            <Field name="phone" component={PhoneField} />
                             <ErrorMessage
                               name="phone"
                               component="div"
@@ -581,18 +611,41 @@ const ContactForm = ({ onHide, ...props }) => {
                             </label>
                           </div>
 
-                          <div className="url">
+                          <div className="url" htmlFor="files">
                             <label className="form-label">
-                              If you ideas or a vision for your wedding please
-                              share a copy of your pinterest board below:
+                              If you have specific images or a vision board for
+                              your wedding please share pictures: Upload Files
+                              (max 25MB)
                             </label>
 
-                            <Field
+                            {/* <Field
                               component="input"
                               type="url"
                               name="pinterest"
                               placeholder="https://example.com"
                               className="form-control"
+                              component={FileUploadField}
+                              name="files"
+                            /> */}
+                            <input
+                              type="file"
+                              name="files"
+                              className={`form-control ${
+                                touched.files && errors.files
+                                  ? "is-invalid"
+                                  : ""
+                              }`}
+                              onChange={(event) => {
+                                setFieldValue(
+                                  "files",
+                                  event.currentTarget.files[0]
+                                );
+                              }}
+                            />
+                            <ErrorMessage
+                              name="files"
+                              component="div"
+                              className="invalid-feedback"
                             />
                           </div>
 

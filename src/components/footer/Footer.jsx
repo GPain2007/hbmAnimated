@@ -1,5 +1,5 @@
 import "./Footer.scss";
-import ImageSlider from "../imageSlider/ImageSlider";
+// import ImageSlider from "../imageSlider/ImageSlider";
 
 const Footer = () => {
   return (
@@ -16,7 +16,7 @@ const Footer = () => {
           <button>Inquire</button>
         </a>
       </div>
-      <ImageSlider />
+      {/* <ImageSlider /> */}
     </div>
   );
 };

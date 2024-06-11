@@ -1,4 +1,4 @@
-import Carousel from "../carousel/Carousel";
+// import Carousel from "../carousel/Carousel";
 import "./OfferSection.scss";
 
 const OfferSection = () => {
@@ -7,11 +7,10 @@ const OfferSection = () => {
       <div className="titleContainer">
         <h1>Offerings</h1>
         <p>
-          Our specialty is creating unique florals for weddings and events that
-          have a romantic and playful touch. We offer Full-Service Event
-          packages and custom A-La-Carte options for weddings and Events. We
-          also offer floral pieces for branding events and custom arrangements;
-          when you want to send your love through flowers.
+          We specialize in creating bloom focused florals for weddings and
+          events that have a romantic and playful touch. We offer Full Service
+          packages and custom A-La-Carte options for weddings and events. We
+          also offer florals for branding events.
         </p>
       </div>
       <div className="listContainer">
@@ -41,23 +40,22 @@ const OfferSection = () => {
           <h2>A La Carte </h2>
           <p>
             A La Carte is perfect for those that want a beautiful and curated
-            floral setup that fits within their budget.
-          </p>
-          <p>
-            Our A La Carte process starts with choosing items from our Floral
-            Menu that align with the vision of your event. Choose your desired
-            items, color palette and design style. With our A La Carte process
-            you will receive a custom design proposal for items and your florals
-            will be packed and ready for pick up on your event day. If you would
-            prefer delivery that can be arranged for an additional fee.
+            floral setup that fits within their budget. Our A La Carte process
+            starts with choosing items from our Floral Menu that align with the
+            vision of your event. Choose your desired items, and share with us
+            specific details like color palette and style. With our A La Carte
+            process you will receive a custom design proposal for your desired
+            florals. On the day of your event, your florals will be packed and
+            ready for pick up. If you would prefer delivery that can be arranged
+            for an additional fee.
           </p>
         </div>
         <div className="box">
           <h2>Custom Offerings</h2>
           <p>
-            We provide custom floral items for editorial , branding and
-            corporate events. We also provide custom arrangements to send to
-            those you love.
+            We provide custom floral items for editorial, branding and corporate
+            events. We provide floral arranging classes and we even have a cute
+            flower cart to rent for your next event.
           </p>
         </div>
       </div>

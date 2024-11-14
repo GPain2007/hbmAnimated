@@ -80,6 +80,7 @@ const initialValues = {
   pinterest: "",
   vendors: "",
   information: "",
+  aboutus: "",
   files: null,
 };
 
@@ -90,12 +91,13 @@ const sendEmail = (values, actions) => {
   selectedData.from_name = name;
   selectedData.from_email = email;
   selectedData.reason = reason;
+  selectedData.files = files;
 
-  for (let key in otherValues) {
-    if (otherValues[key]) {
-      selectedData.append(key, otherValues[key]);
-    }
-  }
+  // for (let key in otherValues) {
+  //   if (otherValues[key]) {
+  //     selectedData.append(key, otherValues[key]);
+  //   }
+  // }
 
   if (files) {
     Array.from(files).forEach((file) => {
@@ -103,87 +105,87 @@ const sendEmail = (values, actions) => {
     });
   }
 
-  // if (otherValues.number_party && !isNaN(otherValues.number_party)) {
-  //   selectedData.number_party = otherValues.number_party;
-  // }
+  if (otherValues.number_party && !isNaN(otherValues.number_party)) {
+    selectedData.number_party = otherValues.number_party;
+  }
 
-  // if (otherValues.guest_count && !isNaN(otherValues.guest_count)) {
-  //   selectedData.guest_count = otherValues.guest_count;
-  // }
+  if (otherValues.guest_count && !isNaN(otherValues.guest_count)) {
+    selectedData.guest_count = otherValues.guest_count;
+  }
 
-  // if (otherValues.couple_name1 && otherValues.couple_name1.trim() !== "") {
-  //   selectedData.couple_name1 = otherValues.couple_name1;
-  // }
-  // if (otherValues.couple_name2 && otherValues.couple_name2.trim() !== "") {
-  //   selectedData.couple_name2 = otherValues.couple_name2;
-  // }
+  if (otherValues.couple_name1 && otherValues.couple_name1.trim() !== "") {
+    selectedData.couple_name1 = otherValues.couple_name1;
+  }
+  if (otherValues.couple_name2 && otherValues.couple_name2.trim() !== "") {
+    selectedData.couple_name2 = otherValues.couple_name2;
+  }
 
-  // if (otherValues.whoIAm && otherValues.whoIAm.trim() !== "") {
-  //   selectedData.whoIAm = otherValues.whoIAm;
-  // }
+  if (otherValues.whoIAm && otherValues.whoIAm.trim() !== "") {
+    selectedData.whoIAm = otherValues.whoIAm;
+  }
 
-  // if (otherValues.couple_names && otherValues.couple_names.trim() !== "") {
-  //   selectedData.couple_names = otherValues.couple_names;
-  // }
+  if (otherValues.couple_names && otherValues.couple_names.trim() !== "") {
+    selectedData.couple_names = otherValues.couple_names;
+  }
 
-  // if (otherValues.phone && otherValues.phone.trim() !== "") {
-  //   selectedData.from_phone = otherValues.phone;
-  // }
+  if (otherValues.phone && otherValues.phone.trim() !== "") {
+    selectedData.from_phone = otherValues.phone;
+  }
 
-  // if (otherValues.phone && otherValues.phone.trim() !== "") {
-  //   selectedData.from_phone = otherValues.phone;
-  // }
+  if (otherValues.phone && otherValues.phone.trim() !== "") {
+    selectedData.from_phone = otherValues.phone;
+  }
 
-  // if (otherValues.date && otherValues.date.trim() !== "") {
-  //   selectedData.from_date = otherValues.date;
-  // }
+  if (otherValues.date && otherValues.date.trim() !== "") {
+    selectedData.from_date = otherValues.date;
+  }
 
-  // if (otherValues.budget && !isNaN(otherValues.budget)) {
-  //   selectedData.from_budget = otherValues.budget;
-  // }
+  if (otherValues.budget && !isNaN(otherValues.budget)) {
+    selectedData.from_budget = otherValues.budget;
+  }
 
-  // if (otherValues.venue && otherValues.venue.trim() !== "") {
-  //   selectedData.from_venue = otherValues.venue;
-  // }
+  if (otherValues.venue && otherValues.venue.trim() !== "") {
+    selectedData.from_venue = otherValues.venue;
+  }
 
-  // if (otherValues.message && otherValues.message.trim() !== "") {
-  //   selectedData.message = otherValues.message;
-  // }
+  if (otherValues.message && otherValues.message.trim() !== "") {
+    selectedData.message = otherValues.message;
+  }
 
-  // if (
-  //   otherValues.floral_design_needs &&
-  //   otherValues.floral_design_needs.trim() !== ""
-  // ) {
-  //   selectedData.floral_design_needs = otherValues.floral_design_needs;
-  // }
+  if (
+    otherValues.floral_design_needs &&
+    otherValues.floral_design_needs.trim() !== ""
+  ) {
+    selectedData.floral_design_needs = otherValues.floral_design_needs;
+  }
 
-  // if (otherValues.floral_wishes && otherValues.floral_wishes.trim() !== "") {
-  //   selectedData.floral_wishes = otherValues.floral_wishes;
-  // }
+  if (otherValues.floral_wishes && otherValues.floral_wishes.trim() !== "") {
+    selectedData.floral_wishes = otherValues.floral_wishes;
+  }
 
-  // if (otherValues.candle_message) {
-  //   selectedData.candle_message = otherValues.candle_message;
-  // }
+  if (otherValues.candle_message) {
+    selectedData.candle_message = otherValues.candle_message;
+  }
 
-  // if (otherValues.candles) {
-  //   selectedData.candles = otherValues.candles;
-  // }
+  if (otherValues.candles) {
+    selectedData.candles = otherValues.candles;
+  }
 
-  // if (otherValues.pinterest) {
-  //   selectedData.pinterest = otherValues.pinterest;
-  // }
+  if (otherValues.pinterest) {
+    selectedData.pinterest = otherValues.pinterest;
+  }
 
-  // if (otherValues.vendors && otherValues.vendors.trim() !== "") {
-  //   selectedData.vendors = otherValues.vendors;
-  // }
+  if (otherValues.vendors && otherValues.vendors.trim() !== "") {
+    selectedData.vendors = otherValues.vendors;
+  }
 
-  // if (otherValues.information && otherValues.information.trim() !== "") {
-  //   selectedData.information = otherValues.information;
-  // }
+  if (otherValues.information && otherValues.information.trim() !== "") {
+    selectedData.information = otherValues.information;
+  }
 
-  // if (otherValues.about_us && otherValues.about_us.trim() !== "") {
-  //   selectedData.about_us = otherValues.about_us;
-  // }
+  if (otherValues.aboutus && otherValues.aboutus.trim() !== "") {
+    selectedData.aboutus = otherValues.aboutus;
+  }
 
   emailjs
     .send(
@@ -611,7 +613,7 @@ const ContactForm = ({ onHide, ...props }) => {
                             </label>
                           </div>
 
-                          <div className="url" htmlFor="files">
+                          {/* <div className="url" htmlFor="files">
                             <label className="form-label">
                               If you have specific images or a vision board for
                               your wedding please share pictures: Upload Files
@@ -626,7 +628,7 @@ const ContactForm = ({ onHide, ...props }) => {
                               className="form-control"
                               component={FileUploadField}
                               name="files"
-                            /> */}
+                            /> 
                             <input
                               type="file"
                               name="files"
@@ -647,7 +649,7 @@ const ContactForm = ({ onHide, ...props }) => {
                               component="div"
                               className="invalid-feedback"
                             />
-                          </div>
+                          </div> */}
 
                           <div className="message">
                             <label className="form-label">
@@ -696,7 +698,7 @@ const ContactForm = ({ onHide, ...props }) => {
                             <label className="form-label">
                               How did you hear about us?
                               <Field
-                                name="about_us"
+                                name="aboutus"
                                 as="textarea"
                                 className={`form-control ${
                                   touched.message && errors.message

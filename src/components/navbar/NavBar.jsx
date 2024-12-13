@@ -14,7 +14,7 @@ export const NavBar = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <a href="/">HBM FLower City </a>
+          <a href="/">HBM Flower City </a>
         </motion.span>
 
         <div className="social">

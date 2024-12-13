@@ -1,22 +1,22 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import "./QA.scss";
 
 const QA = () => {
-  const [showText, setShowText] = useState(false);
-  const [showMid, setShowMid] = useState(false);
-  const [showHigh, setShowHigh] = useState(false);
+  // const [showText, setShowText] = useState(false);
+  // const [showMid, setShowMid] = useState(false);
+  // const [showHigh, setShowHigh] = useState(false);
 
-  const handleClick = () => {
-    setShowText(!showText);
-  };
+  // const handleClick = () => {
+  //   setShowText(!showText);
+  // };
 
-  const handleClick2 = () => {
-    setShowMid(!showMid);
-  };
+  // const handleClick2 = () => {
+  //   setShowMid(!showMid);
+  // };
 
-  const handleClick3 = () => {
-    setShowHigh(!showHigh);
-  };
+  // const handleClick3 = () => {
+  //   setShowHigh(!showHigh);
+  // };
   return (
     <div className="QASection">
       <div className="titleContainer">
@@ -60,11 +60,8 @@ const QA = () => {
       </div>
       <div className="listContainer">
         <div className="box">
-          <button onClick={handleClick2}>
-            <h2>$3, 500 to $6, 000</h2>
-          </button>
-
-          <p className={`text ${showMid ? "visible" : "hidden"}`}>
+          <h2>$3, 500 to $6, 000</h2>
+          <p>
             <p>Items may include:</p>
             <ul>
               <li>A bridal bouquet with premium blooms</li>
@@ -77,10 +74,8 @@ const QA = () => {
           </p>
         </div>
         <div className="box">
-          <button onClick={handleClick3}>
-            <h2>$7000 to $9000</h2>
-          </button>
-          <p className={`text ${showHigh ? "visible" : "hidden"}`}>
+          <h2>$7000 to $9000</h2>
+          <p>
             <p>Items may include:</p>
             <ul>
               <li>A bridal bouquet with premium blooms</li>
@@ -96,10 +91,8 @@ const QA = () => {
           </p>
         </div>
         <div className="box">
-          <button onClick={handleClick}>
-            <h2>$10,000 and above </h2>
-          </button>
-          <p className={`text ${showText ? "visible" : "hidden"}`}>
+          <h2>$10,000 and above </h2>
+          <p>
             <p>Items may include:</p>
             <ul>
               <li>A bridal bouquet with premium blooms</li>

@@ -7,10 +7,7 @@ const OfferSection = () => {
       <div className="titleContainer">
         <h1>Offerings</h1>
         <p>
-          We specialize in creating bloom focused florals for weddings and
-          events that have a romantic and playful touch. We offer Full Service
-          packages and custom A-La-Carte options for weddings and events. We
-          also offer florals for branding events.
+          {`Our romantic garden-style florals bring a timeless elegance to your special day, blending soft, lush arrangements with a touch of whimsy.  From cascading bouquets to enchanting centerpieces, we craft designs that feel as though they’ve been freshly gathered from a secret garden. Let us create an unforgettable atmosphere that celebrates your love story with grace and effortless beauty.`}
         </p>
       </div>
       <div className="listContainer">
@@ -50,14 +47,14 @@ const OfferSection = () => {
             for an additional fee.
           </p>
         </div>
-        <div className="box">
+        {/* <div className="box">
           <h2>Custom Offerings</h2>
           <p>
             We provide custom floral items for editorial, branding and corporate
             events. We provide floral arranging classes and we even have a cute
             flower cart to rent for your next event.
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

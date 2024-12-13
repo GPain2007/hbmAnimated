@@ -29,7 +29,7 @@
   margin: auto;
   border-radius: 10px;
   border: 10px solid white;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   opacity: 0;
   transition: 500ms;
   font-size: 25px;
@@ -46,15 +46,15 @@
     align-items: center;
     display: flex;
     color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
   }
   .quoteAuthor {
-    padding-right: 35px;
+    padding-right: 60px;
     justify-content: right;
     align-items: right;
     display: flex;
     color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
   }
 }
 

@@ -5,6 +5,7 @@ import Contact from "./pages/contact/Contact";
 import Home from "./pages/home/Home";
 import Offerings from "./pages/offerings/Offerings";
 import React, { useEffect } from "react";
+import Gallery from "./components/pictureGallery/picGallery";
 
 function App() {
   useEffect(() => {
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/offerings" element={<Offerings />} />
+          <Route exact path="/gallery" element={<Gallery />} />
         </Routes>
       </Router>
     </div>

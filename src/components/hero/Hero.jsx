@@ -67,7 +67,8 @@ const Hero = () => {
         >
           <motion.h1 variants={testVariants}>HBM Flower City</motion.h1>
           <motion.h2 variants={testVariants}>
-            Using florals to bring joy, excitement and, love into the world!
+            {`Welcome to a world of romance and natural beauty, where every detail
+            bloom's with charm.`}
           </motion.h2>
           <motion.img
             src="/scroll.png"

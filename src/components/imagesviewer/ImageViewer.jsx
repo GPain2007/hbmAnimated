@@ -1,6 +1,7 @@
 import "./ImageViewer.scss";
 import { useState } from "react";
-import Lightbox from "react-image-lightbox";
+import { IoMdClose } from "react-icons/io";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import IMG1 from "/1S0A3672.jpg";
 import IMG2 from "/1S0A3677.jpg";
 import IMG3 from "/1S0A3668.jpg";
@@ -102,16 +103,21 @@ const ImageViewer = () => {
       {isOpen && (
         <div className="lightbox-overlay">
           <div className="lightbox-container">
-            <button className="lightbox-close" onClick={closeLightbox}>
-              &times;
-            </button>
-            <button className="lightbox-prev" onClick={handlePrev}>
-              &lt;
-            </button>
-            <button className="lightbox-next" onClick={handleNext}>
-              &gt;
-            </button>
-            <img src={images[currentIndex]} alt="lightbox image" />
+            <IoMdClose className="lightbox-close" onClick={closeLightbox} />
+            <MdKeyboardArrowLeft
+              className="lightbox-prev"
+              onClick={handlePrev}
+            />
+            <MdKeyboardArrowRight
+              className="lightbox-next"
+              onClick={handleNext}
+            />
+
+            <img
+              src={images[currentIndex]}
+              alt="lightbox image"
+              className="lightbox-image"
+            />
           </div>
         </div>
       )}

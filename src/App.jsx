@@ -5,7 +5,7 @@ import Contact from "./pages/contact/Contact";
 import Home from "./pages/home/Home";
 import Offerings from "./pages/offerings/Offerings";
 import React, { useEffect } from "react";
-import Gallery from "./components/pictureGallery/picGallery";
+import Gallery from "./pages/gallery/Gallery.jsx";
 
 function App() {
   useEffect(() => {

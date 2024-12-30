@@ -22,14 +22,28 @@ import IMG17 from "/Dos-Palomas-Summer-2024-138_websize.jpg";
 import IMG18 from "/Dos-Palomas-Summer-2024-192_websize.jpg";
 import IMG19 from "/Dos-Palomas-Summer-2024-277_websize.jpg";
 import IMG20 from "/Dos-Palomas-Summer-2024-308_websize.jpg";
+import IMG21 from "/StyledShoot2023-55.jpg";
+import IMG22 from "/StyledShoot2023-56.jpg";
+import IMG23 from "/StyledShoot2023-64.jpg";
+import IMG24 from "/StyledShoot2023-114.jpg";
+import IMG25 from "/StyledShoot2023-152.jpg";
+import IMG26 from "/StyledShoot2023-200.jpg";
 
 const ImageViewer = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
+    IMG20,
+    IMG14,
+    IMG15,
+    IMG16,
+    IMG17,
+    IMG18,
+    IMG19,
+    IMG3,
     IMG1,
     IMG2,
-    IMG3,
+
     IMG4,
     IMG5,
     IMG6,
@@ -38,15 +52,15 @@ const ImageViewer = () => {
     IMG9,
     IMG10,
     IMG11,
-    IMG12,
+
     IMG13,
-    IMG14,
-    IMG15,
-    IMG16,
-    IMG17,
-    IMG18,
-    IMG19,
-    IMG20,
+    IMG12,
+    IMG21,
+    IMG22,
+    IMG23,
+    IMG24,
+    IMG25,
+    IMG26,
   ];
   const openLightbox = (index) => {
     setIsOpen(true);
@@ -69,28 +83,6 @@ const ImageViewer = () => {
   return (
     <div className="gallery-container">
       <div className="gallery-grid">
-        {/* <img src={IMG20} alt="" />
-        <img src={IMG14} alt="" />
-        <img src={IMG15} alt="" />
-        <img src={IMG16} alt="" />
-        <img src={IMG17} alt="" />
-        <img src={IMG18} alt="" />
-        <img src={IMG19} alt="" />
-
-        <img src={IMG3} alt="" />
-        <img src={IMG1} alt="" />
-        <img src={IMG2} alt="" />
-
-        <img src={IMG4} alt="" />
-        <img src={IMG5} alt="" />
-        <img src={IMG6} alt="" />
-        <img src={IMG7} alt="" />
-        <img src={IMG8} alt="" />
-        <img src={IMG9} alt="" />
-        <img src={IMG10} alt="" />
-        <img src={IMG11} alt="" />
-        <img src={IMG13} alt="" />
-        <img src={IMG12} alt="" /> */}
         {images.map((image, index) => (
           <img
             key={index}

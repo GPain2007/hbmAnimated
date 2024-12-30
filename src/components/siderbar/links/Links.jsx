@@ -51,7 +51,7 @@ const Links = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        Gallery
+        Portfolio
       </motion.a>
       <motion.a
         href="/contact"

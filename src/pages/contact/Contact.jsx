@@ -1,20 +1,37 @@
-import React, { useState } from "react";
+import { useEffect } from "react";
 import { NavBar } from "../../components/navbar/NavBar";
-import ContactForm from "../../components/contactForm/ContactForm";
 import "./Contact.scss";
 
 const Contact = () => {
-  const [modalShow, setModalShow] = useState(false);
+  useEffect(() => {
+    // Dynamically load the iframeResizer script
+    const script = document.createElement("script");
+    script.src =
+      "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.14/iframeResizer.min.js";
+    script.type = "text/javascript";
+    script.onload = () => {
+      setTimeout(() => {
+        // Initialize iFrameResizer
+        if (window.iFrameResize) {
+          window.iFrameResize({
+            checkOrigin: false,
+            heightCalculationMethod: "taggedElement",
+          });
+        }
+      }, 30);
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script); // Cleanup script on component unmount
+    };
+  }, []);
+
   return (
     <div>
-      <section>
+      <div className="contact">
         <NavBar />
-        <div className="contact_page">
-          <ContactForm
-            className="contactForm"
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-          />
+        <div className="contact_page" style={{ marginTop: "125px" }}>
           <div className="titleContainer">
             <h1>Wedding, Events & More</h1>
           </div>
@@ -28,28 +45,29 @@ const Contact = () => {
           </div>
           <div className="paragraph_2">
             <h3>
-              For other inquiries such as, floral arrangements, workshops, or
-              branding florals please choose the option on the inquiry form and
-              we will be in touch.
+              If you need to get in contact with us directly for other inquiries
+              such as, floral arrangements, workshops, or branding florals,
+              please email us at{" "}
+              <a href="mailto:hello@hbmflower-city.com">
+                hello@hbmflower-city.com
+              </a>{" "}
+              and we will be in touch. Thank you so much for your consideration.
             </h3>
           </div>
-          <div className="paragraph_3">
-            <h2>
-              If you need to get in contact with us directly for other matters,
-              please email us at{" "}
-              <a href="mailto:hbmflowercity@gmail.com">
-                hbmflowercity@gmail.com
-              </a>
-              . Thank you so much for your consideration. We look forward to
-              creating something memorable with you!
-            </h2>
-          </div>
-
-          <div className="contact_button" onClick={() => setModalShow(true)}>
-            Contact US
+          <div className="paragraph_2">
+            <h3>We look forward to creating something memorable with you!</h3>
           </div>
         </div>
-      </section>
+      </div>
+      <div>
+        <div style={{ height: "100vh", scrollSnapAlign: "none" }}>
+          <iframe
+            src="https://hello.dubsado.com/public/form/view/6772f65a372487003acdf7e9"
+            frameBorder="0"
+            style={{ width: "250px", minWidth: "100%", height: "100%" }}
+          ></iframe>
+        </div>
+      </div>
     </div>
   );
 };

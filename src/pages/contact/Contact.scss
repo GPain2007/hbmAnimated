@@ -1,6 +1,7 @@
 @import "../../app.scss";
 
-section {
+.contact {
+  height: 100%;
   background: linear-gradient(180deg, #fff7f4, #f9d8cc);
 
   .contact_page {
@@ -8,8 +9,9 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    flex-direction: column;
     .titleContainer {
+      text-align: center;
       font-size: 55px;
       @include mobile {
         font-size: 22.5px;
@@ -20,6 +22,7 @@ section {
       display: flex;
       justify-content: center;
       align-items: center;
+      text-align: center;
       padding: 20px;
       h2 {
         font-size: 34px;
@@ -37,6 +40,7 @@ section {
 
     .paragraph_2 {
       padding: 20px;
+      text-align: center;
       h3 {
         font-size: 34px;
 
@@ -66,33 +70,5 @@ section {
         font-style: normal;
       }
     }
-  }
-
-  .contact_button {
-    cursor: pointer;
-    height: 100px;
-    width: 400px;
-    background-color: #f9d8cc; // Or any desired color
-    color: goldenrod;
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-size: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px; // Adjust as needed
-    transition: all 0.5s ease-out;
-    @include mobile {
-      height: 50px;
-      width: 200px;
-      font-size: 27.5px;
-      padding: 5px 10px;
-      border-radius: 12.5px;
-    }
-  }
-
-  .contact_button:hover {
-    background-color: goldenrod; // Or any desired color on hover
-    color: #f9d8cc;
   }
 }

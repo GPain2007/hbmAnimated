@@ -25,67 +25,35 @@
         font-size: 36px;
       }
     }
-    button {
-      cursor: pointer;
-      height: 90px;
-      width: 250px;
-      background-color: #f9d8cc; // Or any desired color
-      color: goldenrod;
-      padding: 10px 20px;
-      border-radius: 25px;
-      border: none;
-      font-size: 55px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: all 0.5s ease-out;
-      @include mobile {
-        height: 45px;
-        width: 95px;
-        font-size: 22.5px;
-        padding: 5px 10px;
-        border-radius: 12.5px;
-      }
-    }
-    button:hover {
-      background-color: goldenrod; // Or any desired color on hover
-      color: #f9d8cc;
-    }
   }
   p {
     font-size: 33px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
     @include mobile {
       font-size: 16.5px;
       padding: 15px;
+      max-width: 400px;
     }
   }
-  // .imageContainer {
-  //   flex: 2;
-  //   height: 100%;
-  //   position: relative;
-  //   @include mobile {
-  //     flex: initial;
-  //     height: initial;
-  //     position: initial;
-  //     background-color: #333;
-  //     overflow: hidden;
-  //     white-space: nowrap;
-  //     padding: 10px;
-  //   }
-  //   img {
-  //     height: 60vh;
-  //     width: 25vw;
-  //     display: inline;
-  //     padding: 0px 5px;
-  //     @include mobile {
-  //       display: inline-block;
-  //       width: 75vw;
-  //       padding: 5px;
-  //       max-width: 932px;
-  //     }
-  //   }
-  // }
+  .southernBride {
+    height: 220px;
+    width: 220px;
+    align-self: flex-end;
+    margin-left: 68rem;
+    @include mobile {
+      height: 110px;
+      width: 110px;
+      margin-left: 0rem;
+    }
+  }
 }

@@ -21,7 +21,6 @@ const Offerings = () => {
         <QA />
       </section>
       <section>
-        {" "}
         <Footer />
       </section>
     </div>

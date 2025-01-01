@@ -7,9 +7,6 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    @include mobile {
-      display: initial;
-    }
 
     .titleContainer {
       flex: 1;
@@ -39,7 +36,7 @@ section {
         font-style: normal;
         @include mobile {
           font-size: 12.5px;
-          padding: 8px 15px 2px 15px;
+          padding: 8px;
         }
       }
     }
@@ -62,9 +59,8 @@ section {
         gap: 15px;
         transition: all 0.5s ease-out;
         @include mobile {
-          padding: 8px 15px 2px 15px;
           gap: 2.5px;
-          width: 100vw;
+          width: 100%;
         }
         h2 {
           @include mobile {

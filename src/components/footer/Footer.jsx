@@ -12,8 +12,7 @@ const Footer = () => {
           <a href="mailto:hello@hbmflower-city.com">
             &nbsp;hello@hbmflower-city.com&nbsp;
           </a>
-          about your floral needs or click <br />
-          the link to tell us about your event.
+          about your floral needs.
         </p>
 
         <a

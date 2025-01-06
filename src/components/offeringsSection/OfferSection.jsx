@@ -47,6 +47,15 @@ const OfferSection = () => {
             for an additional fee.
           </p>
         </div>
+        <div className="box">
+          <h2>Custom Offerings</h2>
+
+          <p>
+            We provide custom floral items for editorial, branding and corporate
+            events. We provide floral arranging classes and we even have a cute
+            flower cart to rent for your next event.
+          </p>
+        </div>
       </div>
     </div>
   );

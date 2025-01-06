@@ -1,22 +1,6 @@
-// import React, { useState } from "react";
 import "./QA.scss";
 
 const QA = () => {
-  // const [showText, setShowText] = useState(false);
-  // const [showMid, setShowMid] = useState(false);
-  // const [showHigh, setShowHigh] = useState(false);
-
-  // const handleClick = () => {
-  //   setShowText(!showText);
-  // };
-
-  // const handleClick2 = () => {
-  //   setShowMid(!showMid);
-  // };
-
-  // const handleClick3 = () => {
-  //   setShowHigh(!showHigh);
-  // };
   return (
     <div className="QASection">
       <div className="titleContainer">
@@ -93,7 +77,7 @@ const QA = () => {
         <div className="box">
           <h2>$10,000 and above </h2>
           <p>
-            <p>Items may include:</p>
+            Items may include:
             <ul>
               <li>A bridal bouquet with premium blooms</li>
               <li>Bridesmaids bouquets with premium blooms</li>

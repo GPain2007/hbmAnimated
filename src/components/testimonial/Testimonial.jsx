@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import "./testimonial.scss";
 import { TestmonialData } from "./ImageData";
 
@@ -34,20 +34,20 @@ const Testimonial = () => {
     },
   };
 
-  const carouselVariants = {
-    initial: {
-      x: +500,
-      opacity: 0,
-    },
-    animate: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 1,
-        staggerChildren: 0.1,
-      },
-    },
-  };
+  // const carouselVariants = {
+  //   initial: {
+  //     x: +500,
+  //     opacity: 0,
+  //   },
+  //   animate: {
+  //     x: 0,
+  //     opacity: 1,
+  //     transition: {
+  //       duration: 1,
+  //       staggerChildren: 0.1,
+  //     },
+  //   },
+  // };
 
   return (
     <div>

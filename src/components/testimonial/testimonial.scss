@@ -7,6 +7,9 @@
   display: flex;
   justify-content: center;
   background: linear-gradient(180deg, #f9d8cc, #fff7f4);
+  // @include mobile {
+  //   height: 85%;
+  // }
 
   .pageTitle {
     position: absolute;
@@ -47,6 +50,9 @@
     display: flex;
     color: white;
     text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    @include mobile {
+      color: goldenrod;
+    }
   }
   .quoteAuthor {
     padding-right: 60px;
@@ -55,6 +61,9 @@
     display: flex;
     color: white;
     text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
+    @include mobile {
+      color: goldenrod;
+    }
   }
 }
 

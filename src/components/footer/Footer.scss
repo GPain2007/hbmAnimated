@@ -5,6 +5,9 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  // @include mobile {
+  //   height: 25%;
+  // }
 
   .titleSection {
     flex: 1;

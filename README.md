@@ -97,6 +97,7 @@ Open problems are tracked in [GitHub Issues](https://github.com/GPain2007/hbmAni
 ## Recent changes
 
 <!-- Maintained by the weekly review task. Newest first. -->
+- **2026-11-12:** Merged PR #1 into `main`; first CI runs (PR and push) passed: tests, build, lint (non-blocking).
 - **2026-11-12:** Rewrote README; added Vitest tests and a GitHub Actions workflow (push, PR and weekly schedule).
 
 ## Contact
